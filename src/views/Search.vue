@@ -5,12 +5,13 @@
     <apt-search-bar />
     <b-row>
       <div id="app">
-    <div id="map"></div>
-  </div>
+        <div id="map"></div>
+    </div>
       <b-col cols="6" align="left">
         <apt-list />
       </b-col>
       <b-col cols="6">
+        <div>views > Search.vue > line 14, apt-detail 위치할 위치 </div>
         <apt-detail />
       </b-col>
     </b-row>

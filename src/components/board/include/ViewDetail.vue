@@ -1,4 +1,5 @@
 <template>
+
     <div class="container" id="view_detail">
       <div class="text-right">
               <button class="btn btn-primary" @click="moveList">목록</button>
@@ -30,6 +31,7 @@
 
     <br />
     <div class="text-center">
+
       <button class="btn btn-primary" @click="modifyBoard">수정</button>
       <button class="btn btn-primary" @click="deleteBoard">삭제</button>
     </div>
@@ -38,6 +40,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+
 import moment from 'moment';
 
 export default {
@@ -69,6 +72,7 @@ export default {
     }
 }
 </script>
+
 
 <style scoped>
 #view_detail{

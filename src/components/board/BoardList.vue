@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div class="text-right container">
             <button class="btn btn-primary" @click="movePage">게시물 등록</button>
         </div>
@@ -12,6 +13,7 @@
                 <col :style="{ width: '10%' }" />
                 <col :style="{ width: '25%' }" />
             </colgroup>
+
             <thead>
             <tr>
                 <th>번호</th>
@@ -19,6 +21,7 @@
                 <th>작성자</th>
                 <th>날짜</th>
             </tr>
+
             </thead>
             <tbody>
             <list-row
@@ -29,6 +32,7 @@
                 :writer="board.writer"
                 :regtime="board.regtime"
             />
+
             </tbody>
         </table>
         </div>
@@ -42,8 +46,10 @@ import { mapGetters } from "vuex";
 import ListRow from "@/components/board/include/ListRow.vue";
 
 
+
 export default {
     name:'BoardList',
+
     
     components:{
         ListRow,
@@ -56,11 +62,13 @@ export default {
     },
     methods: {
         movePage() {
+
             this.$router.push("/board/create");
         },
     },
 }
 </script>
+
 
 <style scoped>
 table thead th{

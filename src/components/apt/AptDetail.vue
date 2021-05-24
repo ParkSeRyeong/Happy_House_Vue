@@ -1,4 +1,5 @@
 <template>
+
   <b-container v-if="apt.일련번호" class="bv-example-row">
     <b-row>
       <b-col
@@ -15,16 +16,19 @@
     </b-row>
     <b-row>
       <b-col>
+
         <b-alert show variant="primary">아파트 이름 : {{ apt.AptName }}</b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
+
         <b-alert show variant="info">법정동 : {{ apt.법정동 }}</b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
+
         <b-alert show variant="warning">층수 : {{ apt.층 }}층</b-alert>
       </b-col>
     </b-row>
@@ -45,6 +49,7 @@ export default {
   name: 'AptDetail',
   computed: {
     ...mapState(['apt']),
+
   },
   filters: {
     price(value) {
@@ -52,6 +57,7 @@ export default {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     },
   },
+
 };
 </script>
 

@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <write-form type="create" ></write-form>
   </div>
