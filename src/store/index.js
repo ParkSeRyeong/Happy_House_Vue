@@ -92,7 +92,9 @@ export default new Vuex.Store({
       });
     },
     selectApt({ commit }, apt) {
-      commit('SELECT_APT', apt);
+      axios.get('/map/dealInfo/'+ apt.dong+'/'+apt.aptName).then(({ data }) => {
+        commit('SELECT_APT', data);
+      });
     },
 
     //BoardListItem

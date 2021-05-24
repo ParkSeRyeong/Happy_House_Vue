@@ -11,7 +11,6 @@
         <apt-list />
       </b-col>
       <b-col cols="6">
-        <div>views > Search.vue > line 14, apt-detail 위치할  </div>
         <apt-detail />
       </b-col>
     </b-row>
