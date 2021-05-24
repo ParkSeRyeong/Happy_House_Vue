@@ -28,9 +28,7 @@ export default {
   
   methods: {
     ...mapActions(['selectApt']),
-    choo(){
-
-    },
+    
     chooseApt() {
       this.selectApt(this.apt);
 
@@ -50,8 +48,11 @@ export default {
        });
        marker.setMap(map);
 
-      }
-  }
+      },
+      colorChange(flag) {
+      this.isColor = flag;
+    },
+  },
 }
 </script>
 
