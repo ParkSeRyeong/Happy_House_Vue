@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <table class="table table-bordered w-50">
       <tr>
         <th>번호</th>
@@ -30,18 +30,28 @@
       <button class="btn btn-primary" @click="modifyBoard">수정</button>
       <button class="btn btn-primary" @click="deleteBoard">삭제</button>
     </div>
-   </div>
+  </div>
 </template>
 
 <script>
+alert("viewdetail");
 import { mapGetters } from "vuex";
 
 export default {
-    name:"ViewDetail",
-    computed:{
-        ...mapGetters(["board"])
-    }
-}
+  name: "ViewDetail",
+  // data() {
+  //   return {
+  //     no: "",
+  //     writer: "",
+  //     title: "",
+  //     regtime: "",
+  //     content: "",
+  //   };
+  // },
+  computed: {
+    ...mapGetters(["board"]),
+  },
+};
 </script>
 
 <style></style>

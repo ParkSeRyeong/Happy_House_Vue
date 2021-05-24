@@ -13,7 +13,7 @@ export default new Vuex.Store({
     apt: Object,
     //Board
     boards: [],
-    board:{}
+    board: {},
   },
   getters: {
     sido(state) {
@@ -62,37 +62,37 @@ export default new Vuex.Store({
       state.board = payload;
     },
 
-     //BoardListItem
+    //BoardListItem
     DELETE_BOARD(state, board) {
       state.items.splice(state.items.indexOf(board));
     },
     // MODIFY_BOARD(state, board) {
-      
+
     // },
   },
   actions: {
-    getSido({commit}) {
+    getSido({ commit }) {
       axios.get('/map/sido').then(({ data }) => {
         commit("get_sido", data);
       });
     },
-    getGugun({commit}, sido_code) {
-      axios.get('/map/gugun/'+sido_code).then(({ data }) => {
+    getGugun({ commit }, sido_code) {
+      axios.get('/map/gugun/' + sido_code).then(({ data }) => {
         commit("get_gugun", data);
       });
     },
-    getDong({commit}, gugun_code) {
-      axios.get('/map/dong/'+gugun_code).then(({ data }) => {
+    getDong({ commit }, gugun_code) {
+      axios.get('/map/dong/' + gugun_code).then(({ data }) => {
         commit("get_dong", data);
       });
     },
-    getApts({commit}, dong) {
-      axios.get('/map/apt/'+ dong).then(({ data }) => {
+    getApts({ commit }, dong) {
+      axios.get('/map/apt/' + dong).then(({ data }) => {
         commit("get_apts", data);
       });
     },
     selectApt({ commit }, apt) {
-      axios.get('/map/dealInfo/'+ apt.dong+'/'+apt.aptName).then(({ data }) => {
+      axios.get('/map/dealInfo/' + apt.dong + '/' + apt.aptName).then(({ data }) => {
         commit('SELECT_APT', data);
       });
     },
@@ -106,19 +106,21 @@ export default new Vuex.Store({
     },
 
     //BoardList
-    getBoards(context, payload) {
-      axios.get(payload)
-        .then((response) => {
-          this.boards = response.data;
+    getBoards(context) {
+      axios.get("/api/board")
+        .then(({ data }) => {
+          console.log(data),
+            context.commit("setBoards", data);
         })
         .catch((error) => {
           console.dir(error);
           alert("에러발생!!!");
         });
     },
-    getBoard(context, payload) {
-      axios.get(payload).then((response) => {
-        this.board = response.data;
+    getBoard({ commit }, no) {
+      axios.get("/api/board/" + no).then(({ data }) => {
+        console.log(data),
+          commit("setBoard", data);
       });
     }
   }
