@@ -25,8 +25,7 @@ export default new Router({
       components: {
         //header: Header,
         default: Search,
-
-        footer: Footer
+        //  footer: Footer
       },
     },
 
@@ -61,8 +60,7 @@ export default new Router({
         },
       ],
       redirect: () => {
-
-        return "/board";
+        return "/Board";
       }
     },
     // { -------------------------- search detail
@@ -80,9 +78,7 @@ export default new Router({
 // const router = new VueRouter({
 //   mode: "history",
 //   base: process.env.BASE_URL,
-
-//   routes
+//   routes,
 // });
 
-//export default router;
-
+// export default router;
