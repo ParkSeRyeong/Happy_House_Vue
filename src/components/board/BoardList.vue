@@ -1,11 +1,9 @@
 <template>
     <div>
-
-        <div class="text-right container">
+        <div class="text-right">
             <button class="btn btn-primary" @click="movePage">게시물 등록</button>
         </div>
-        <br>
-        <div v-if="boards.length" class="container">
+        <div v-if="boards.length">
         <table class="table table-bordered table-condensed">
             <colgroup>
                 <col :style="{ width: '5%' }" />
@@ -13,18 +11,13 @@
                 <col :style="{ width: '10%' }" />
                 <col :style="{ width: '25%' }" />
             </colgroup>
-
-            <thead>
             <tr>
                 <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
                 <th>날짜</th>
             </tr>
-
-            </thead>
-            <tbody>
-            <list-row
+            <board-row
                 v-for="(board, index) in boards"
                 :key="`${index}_items`"
                 :no="board.no"
@@ -32,11 +25,9 @@
                 :writer="board.writer"
                 :regtime="board.regtime"
             />
-
-            </tbody>
         </table>
         </div>
-        <div v-else class="text-center">게시글이 없습니다.</div>
+        <div v-else>게시글이 없습니다.</div>
             
     </div>
 </template>
@@ -44,15 +35,14 @@
 <script>
 import { mapGetters } from "vuex";
 import ListRow from "@/components/board/include/ListRow.vue";
-
+import BoardCreate from "@/components/board/BoardCreate.vue";
 
 
 export default {
     name:'BoardList',
-
-    
     components:{
         ListRow,
+        BoardCreate,
     },
     computed:{
         ...mapGetters(["boards"])
@@ -62,21 +52,12 @@ export default {
     },
     methods: {
         movePage() {
-
-            this.$router.push("/board/create");
+            this.$router.push('/create');
         },
     },
 }
 </script>
 
-
-<style scoped>
-table thead th{
-    padding: 10px;
-    font-weight:bold;
-    vertical-align: top;
-    color:#369;
-    border-bottom:3px solid #036;
-    text-align: center;
-};
+<style>
+    
 </style>

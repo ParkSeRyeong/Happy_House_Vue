@@ -62,28 +62,13 @@ export default new Vuex.Store({
       state.board = payload;
     },
 
-     //BoardView
-    MODIFY_BOARD(state, board) {
-      state.boards = state.boards.map((boardItem) => {
-        if (boardItem === board) {
-          return {
-            no: board.no,
-            title: board.title,
-            writer: board.writer,
-            regtime: board.regtime,
-            content:board.content,
-          }
-        }
-        return boardItem;
-      });
-    },
+     //BoardListItem
     DELETE_BOARD(state, board) {
-      state.boards.splice(state.boards.indexOf(board));
+      state.items.splice(state.items.indexOf(board));
     },
-    SUBMIT_BOARD(state, boardItem) {
-      state.boards.push(boardItem);
-    },
-    
+    // MODIFY_BOARD(state, board) {
+      
+    // },
   },
   actions: {
     getSido({commit}) {
@@ -110,7 +95,7 @@ export default new Vuex.Store({
       commit('SELECT_APT', apt);
     },
 
-    //BoardView
+    //BoardListItem
     modifyBoard({ commit }, board) {
       commit("MODIFY_BOARD", board);
     },
@@ -118,15 +103,11 @@ export default new Vuex.Store({
       commit("DELETE_BOARD", board);
     },
 
-    submitBoard({ commit }, boardItem) {
-      commit("SUBMIT_BOARD", boardItem);
-    },
-
     //BoardList
-    getBoards(context) {
-      axios.get("/api/board")
-        .then(({data}) => {
-          context.commit("setBoards", data);
+    getBoards(context, payload) {
+      axios.get(payload)
+        .then((response) => {
+          this.boards = response.data;
         })
         .catch((error) => {
           console.dir(error);
@@ -134,8 +115,8 @@ export default new Vuex.Store({
         });
     },
     getBoard(context, payload) {
-      axios.get(payload).then(({data}) => {
-        context.commit("setBoard", data);
+      axios.get(payload).then((response) => {
+        this.board = response.data;
       });
     }
   }
