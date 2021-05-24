@@ -1,6 +1,7 @@
 <template>
    <div>
-     <vie-detail></vie-detail>
+
+     <view-detail></view-detail>
    </div>
 </template>
 

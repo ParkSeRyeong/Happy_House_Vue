@@ -1,29 +1,35 @@
 <template>
-  <b-container class="bv-example-row">
-    <div> src > components > apt > AptDetail.vue > line 3, apt-detail  </div>
+
+  <b-container v-if="apt.일련번호" class="bv-example-row">
     <b-row>
+      <b-col
+        ><h3>{{ apt.아파트 }}</h3></b-col
+      >
     </b-row>
     <b-row class="mb-2 mt-1">
       <b-col><img src="" alt=""/></b-col>
     </b-row>
     <b-row>
       <b-col>
-        <b-alert show variant="secondary">일련번호 : {{ $store.apt.aptName }}</b-alert>
+        <b-alert show variant="secondary">일련번호 : {{ apt.일련번호 }}</b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
-        <b-alert show variant="primary">아파트 이름 : {{ apt.aptName }}</b-alert>
+
+        <b-alert show variant="primary">아파트 이름 : {{ apt.AptName }}</b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
-        <b-alert show variant="info">법정동 : {{ this.apt.aptName }}</b-alert>
+
+        <b-alert show variant="info">법정동 : {{ apt.법정동 }}</b-alert>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
-        <b-alert show variant="warning">층수 : {{ this.apt }}층</b-alert>
+
+        <b-alert show variant="warning">층수 : {{ apt.층 }}층</b-alert>
       </b-col>
     </b-row>
     <b-row>
@@ -43,7 +49,7 @@ export default {
   name: 'AptDetail',
   computed: {
     ...mapState(['apt']),
-    
+
   },
   filters: {
     price(value) {
@@ -51,7 +57,7 @@ export default {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     },
   },
-  
+
 };
 </script>
 
