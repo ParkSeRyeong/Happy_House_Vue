@@ -1,57 +1,44 @@
 <template>
-  <b-container class="bv-example-row">
-    <div> src > components > apt > AptDetail.vue > line 3, apt-detail  </div>
+  <b-container v-if="apt && apt.length != 0" class="bv-example-row mt-3">
+    <table class="table mt-2">
+    <thead>
+          <tr>
+            <th>아파트 이름</th>
+            <th>가격</th>
+          </tr>
+        </thead>
+     <tbody>   
+    <apt-Deal-list-item v-for="(aptdeal, index) in apt" :key="index" :aptdeal="aptdeal" />
+     </tbody>
+    </table>
+  </b-container>
+  <b-container v-else class="bv-example-row mt-3">
     <b-row>
-    </b-row>
-    <b-row class="mb-2 mt-1">
-      <b-col><img src="" alt=""/></b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <b-alert show variant="secondary">일련번호 : {{ $store.apt.aptName }}</b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <b-alert show variant="primary">아파트 이름 : {{ apt.aptName }}</b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <b-alert show variant="info">법정동 : {{ this.apt.aptName }}</b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <b-alert show variant="warning">층수 : {{ this.apt }}층</b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <b-alert show variant="danger"
-          >거래금액 : {{ (apt.거래금액.replace(',', '') * 10000) | price }}원</b-alert
-        >
-      </b-col>
+      <b-col><b-alert show>아파트 목록이 없습니다.</b-alert></b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import AptDealListItem from '@/components/apt/AptDealListItem.vue';
 
 export default {
   name: 'AptDetail',
+  data(){
+    return{
+      
+    };
+  },
+  created:{
+    apt:[],
+  },
   computed: {
     ...mapState(['apt']),
-    
   },
-  filters: {
-    price(value) {
-      if (!value) return value;
-      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    },
-  },
-  
+  components: {
+    AptDealListItem,
+  }
 };
 </script>
 
