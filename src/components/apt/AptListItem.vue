@@ -25,20 +25,34 @@ export default {
   props: {
     apt: Object,
   },
+  
   methods: {
-    // chooseApt() {
-    //   // this.$emit('select-apt', this.apt);
-    //   this.$store.dispatch('selectApt', this.apt);
-    // },
     ...mapActions(['selectApt']),
+    choo(){
+
+    },
     chooseApt() {
       this.selectApt(this.apt);
-    },
-    colorChange(flag) {
-      this.isColor = flag;
-    },
-  },
-};
+
+      /* global kakao */
+      var container = document.getElementById('map');
+      var options = {
+          center: new kakao.maps.LatLng(this.apt.lat, this.apt.lng),
+          level: 6
+      };
+
+      var map = new kakao.maps.Map(container, options);
+
+      map.panTo(options.center);
+              
+      var marker = new kakao.maps.Marker({
+       position: options.center
+       });
+       marker.setMap(map);
+
+      }
+  }
+}
 </script>
 
 <style scoped>
