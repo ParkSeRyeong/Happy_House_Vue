@@ -2,7 +2,10 @@
   <tr>
     <td>{{ no }}</td>
     <td>
-      <router-link :to="`Board/view?no=${no}`">{{ title }}</router-link>
+      <!-- <router-link :to="`/board/view?no=${no}`">{{ title }}</router-link> -->
+      <router-link :to="{ name: 'board-view', params: { no: no } }">{{
+        title
+      }}</router-link>
     </td>
     <td>{{ writer }}</td>
     <td>{{ getFormatDate(regtime) }}</td>
@@ -10,19 +13,24 @@
 </template>
 
 <script>
+alert("listrow");
+import moment from "moment";
+
 export default {
-  name: "ListRow",
+  // name: "ListRow",
+  name: "params",
   props: {
     no: Number,
     title: String,
-    author: String,
-    regtime: String
+    writer: String,
+    regtime: String,
+    content: String,
   },
   methods: {
     getFormatDate(regtime) {
-      return moment(new Date(regtime)).format('YYYY.MM.DD');
+      return moment(new Date(regtime)).format("YYYY.MM.DD");
     },
-  }
+  },
 };
 </script>
 
