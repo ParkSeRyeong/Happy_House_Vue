@@ -63,6 +63,7 @@
 @import "bootstrap/print";
 
 // Custom components
+@import "custom_house/custom.scss";
 
 @import "custom/reboot.scss";
 @import "custom/global.scss";
@@ -98,14 +99,3 @@
 @import "custom/vendor/flatpickr.scss";
 @import "custom/vendor/headroom.scss";
 @import "custom/vendor/nouislider.scss";
-
-/* custom */
-.mainbg {
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/images_happy/mainBackground.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-  }
