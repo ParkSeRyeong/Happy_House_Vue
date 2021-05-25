@@ -79,7 +79,13 @@
 	        </ul>
 	        <!-- 여기 추가했어여 -->
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="${root}/user/login" class="nav-link">Login / Sign Up</a></li>
+                <li>
+                    <router-link to="/signup" class="dropdown-item">SignUp</router-link>
+                </li>
+                <li>
+                    <router-link to="/login" class="dropdown-item">Login</router-link>
+                </li>
+	          <!-- <li class="nav-item"><a href="${root}/user/login" class="nav-link">Login / Sign Up</a></li> -->
 	        </ul>
 	      </div>
             <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">

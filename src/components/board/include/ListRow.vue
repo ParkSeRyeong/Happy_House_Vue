@@ -13,7 +13,6 @@
 </template>
 
 <script>
-alert("listrow");
 import moment from "moment";
 
 export default {

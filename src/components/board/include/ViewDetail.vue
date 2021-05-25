@@ -34,7 +34,6 @@
 </template>
 
 <script>
-alert("viewdetail");
 import { mapGetters } from "vuex";
 
 export default {

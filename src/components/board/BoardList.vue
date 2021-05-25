@@ -32,7 +32,6 @@
 </template>
 
 <script>
-alert("boardlist");
 import { mapGetters } from "vuex";
 import ListRow from "@/components/board/include/ListRow.vue";
 // import BoardCreate from "@/components/board/BoardCreate.vue";

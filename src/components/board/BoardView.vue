@@ -1,12 +1,10 @@
 <template>
   <div>
-    ㅇㄹㅇㄹ
     <view-detail></view-detail>
   </div>
 </template>
 
 <script>
-alert("boardview");
 import ViewDetail from "@/components/board/include/ViewDetail.vue";
 
 export default {
