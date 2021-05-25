@@ -35,18 +35,5 @@ export default {
 </script>
 
 <style>
-.login{
-  padding-top: 0;
-  padding-bottom:30px;
-}
-#login-form{
-  text-align: left;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  margin: 5px 40px;
-  padding: 20px;
-}  
-.form-group{
-  margin: 5px 25px;
-}
+
 </style>
