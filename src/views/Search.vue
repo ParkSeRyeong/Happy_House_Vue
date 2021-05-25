@@ -1,12 +1,17 @@
 <template>
-<div>
-<b-container class="bv-example-row">
-    <h2>아파트 매매 정보</h2>
+<div class="fontToWhite mainbg-search" id="app">
+    <b-container class="bv-example-row">
+      <b-row>
+      <div class="col-md-12  ftco-animate pb-0 text-center">
+          	<h1 class="mb-4 bread fontToWhite">주택 거래가검색하기</h1>
+      </div>
+      </b-row>
+    <hr>
     <apt-search-bar />
+    <b-row class="map-center">
+        <div id="map" class="col-lg-12 mb-4"></div>
+    </b-row>
     <b-row>
-      <div id="app">
-        <div id="map"></div>
-    </div>
       <b-col cols="6" align="left">
         <apt-list />
       </b-col>
@@ -17,6 +22,7 @@
   </b-container>
 </div>
 </template>
+
 
 <script>
 import AptSearchBar from '@/components/apt/AptSearchBar.vue';
@@ -78,7 +84,8 @@ kakao.maps.event.addListener(marker, 'click', function() {
 
 <style>
 #map {
-    width: 1000px;
-    height: 300px;
+    width: 100%;
+    height: 400px;
 }
+
 </style>
