@@ -1,26 +1,15 @@
 <template>
-    <div id="app">
-        <h2>게시판</h2>
-        <div id="boardList">
-            <board-list></board-list>
-        </div>
-
+  <div id="app">
+    <h2>게시판</h2>
+    <div id="boardList">
+      <router-view />
     </div>
+  </div>
 </template>
 
-<script>
-import BoardList from "@/components/board/BoardList.vue";
-
-export default {
-    name: 'Board',
-    components: {
-        BoardList
-    },
-}
-</script>
 
 <style>
-div#boardList{
-    text-align: center;
+div#boardList {
+  text-align: center;
 }
 </style>
