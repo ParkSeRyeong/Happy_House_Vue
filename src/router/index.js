@@ -23,9 +23,9 @@ export default new Router({
       path: "/search",
       name: "search",
       components: {
-        //header: Header,
+        header: Header,
         default: Search,
-        //  footer: Footer
+        footer: Footer
       },
     },
 
