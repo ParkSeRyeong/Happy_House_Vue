@@ -107,21 +107,19 @@ export default new Vuex.Store({
 
     //BoardList
     getBoards(context) {
-      axios.get("/api/board")
+      axios
+        .get("/board")
         .then(({ data }) => {
-          console.log(data),
-            context.commit("setBoards", data);
+          context.commit("setBoards", data);
         })
-        .catch((error) => {
-          console.dir(error);
-          alert("에러발생!!!");
+        .catch(() => {
+          alert("에러발생!");
         });
     },
-    getBoard({ commit }, no) {
-      axios.get("/api/board/" + no).then(({ data }) => {
-        console.log(data),
-          commit("setBoard", data);
+    getBoard(context, payload) {
+      axios.get("/board/" + payload).then(({ data }) => {
+        context.commit("setBoard", data);
       });
-    }
+    },
   }
 });
