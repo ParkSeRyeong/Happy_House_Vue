@@ -16,7 +16,9 @@
     <b-row>
       <b-col><b-alert show>아파트 목록이 없습니다.</b-alert></b-col>
     </b-row>
+    
   </b-container>
+  
 </template>
 
 <script>

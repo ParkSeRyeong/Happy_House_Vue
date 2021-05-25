@@ -5,6 +5,10 @@ import store from "./store";
 import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
