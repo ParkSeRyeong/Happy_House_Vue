@@ -1,5 +1,8 @@
 <template>
-    <div>
+  <div>
+    <write-form type="create" />
+  </div>
+  <!-- <div>
     <div class="form-group">
       <label for="writer">작성자</label>
       <input
@@ -38,24 +41,28 @@
       <button class="btn btn-primary" @click="modifyBoard">수정</button>
       <button class="btn btn-primary" @click="moveList">목록</button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
+import WriteForm from "@/components/board/include/WriteForm.vue";
+
 export default {
-    name:"BoardCreate",
-    props:['item'],
-    methods:{
-        modifyBoard(){
-            this.$store.dispatch("modifyBoard", this.item);
-        },
-        moveList() {
-            this.$router.push('/Board');
-        },
-    }
-}
+  name: "boardcreate",
+  // props: ["item"],
+  // methods: {
+  //   modifyBoard() {
+  //     this.$store.dispatch("modifyBoard", this.item);
+  //   },
+  //   moveList() {
+  //     this.$router.push("/Board");
+  //   },
+  // },
+  components: {
+    WriteForm,
+  },
+};
 </script>
 
 <style>
-    
 </style>

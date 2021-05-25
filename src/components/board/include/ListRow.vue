@@ -2,10 +2,7 @@
   <tr>
     <td>{{ no }}</td>
     <td>
-      <!-- <router-link :to="`/board/view?no=${no}`">{{ title }}</router-link> -->
-      <router-link :to="{ name: 'board-view', params: { no: no } }">{{
-        title
-      }}</router-link>
+      <router-link :to="`board/view?no=${no}`">{{ title }}</router-link>
     </td>
     <td>{{ writer }}</td>
     <td>{{ getFormatDate(regtime) }}</td>
@@ -16,8 +13,7 @@
 import moment from "moment";
 
 export default {
-  // name: "ListRow",
-  name: "params",
+  name: "listrow",
   props: {
     no: Number,
     title: String,
