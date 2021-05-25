@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="underline">공지사항 목록</h1>
     <div class="text-right">
       <button class="btn btn-primary" @click="movePage">게시물 등록</button>
     </div>
@@ -37,7 +38,7 @@ import ListRow from "@/components/board/include/ListRow.vue";
 // import BoardCreate from "@/components/board/BoardCreate.vue";
 
 export default {
-  name: "BoardList",
+  name: "boardList",
   components: {
     ListRow,
     // BoardCreate,
@@ -50,7 +51,7 @@ export default {
   },
   methods: {
     movePage() {
-      this.$router.push("/create");
+      this.$router.push({ name: "board-create" });
     },
   },
 };
