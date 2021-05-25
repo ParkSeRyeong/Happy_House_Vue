@@ -79,7 +79,7 @@
 	        </ul>
 	        <!-- 여기 추가했어여 -->
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="${root}/user/login" class="nav-link">Login / Sign Up</a></li>
+	          <li class="nav-item"><router-link to="/login" class="nav-link">Login</router-link></li>
 	        </ul>
 	      </div>
             <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">

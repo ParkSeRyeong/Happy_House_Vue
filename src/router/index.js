@@ -5,6 +5,7 @@ import Header from "../layout/starter/StarterHeader";
 import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
+import Login from "../views/Login.vue";
 
 Vue.use(Router);
 
@@ -20,6 +21,15 @@ export default new Router({
       },
     },
     {
+      path: "/login",
+      name: "login",
+      components: {
+        header: Header,
+        default: Login,
+        footer: Footer
+      }
+    },
+    {
       path: "/search",
       name: "search",
       components: {
@@ -28,7 +38,6 @@ export default new Router({
         footer: Footer
       },
     },
-
     {
       path: "/board",
       name: "board",
