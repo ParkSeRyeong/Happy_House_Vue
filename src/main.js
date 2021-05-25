@@ -3,12 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Argon from "./plugins/argon-kit";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap-vue/dist/bootstrap-vue.css"
 import './registerServiceWorker'
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
@@ -19,4 +18,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount("#app");
+}).$mount("#app");  

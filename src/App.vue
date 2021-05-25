@@ -2,9 +2,9 @@
     <div id="app">
         <router-view name="header"></router-view>
         <main class="mainbg">
-            <fade-transition origin="center" mode="out-in" :duration="250">
+            <transition name="fade" origin="center" mode="out-in" :duration="500">
                 <router-view/>
-            </fade-transition>
+            </transition>
         </main>
         <router-view name="footer"></router-view>
     </div>
