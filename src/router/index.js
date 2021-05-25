@@ -49,7 +49,7 @@ export default new Router({
           component: () => import("@/components/board/BoardCreate.vue")
         },
         {
-          path: "view/:no",
+          path: "view?no=",
           name: "board-view",
           props: true,
           component: () => import("@/components/board/BoardView.vue")

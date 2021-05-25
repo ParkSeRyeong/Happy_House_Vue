@@ -118,8 +118,8 @@ export default new Vuex.Store({
         });
     },
     getBoard({ commit }, no) {
-      axios.get("/api/board/" + no).then(({ data }) => {
-        console.log(data),
+      axios.get("/api/board/view" + no).then(({ data }) => {
+        alert("asdfasdfa")
           commit("setBoard", data);
       });
     }

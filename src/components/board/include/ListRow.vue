@@ -2,10 +2,11 @@
   <tr>
     <td>{{ no }}</td>
     <td>
-      <!-- <router-link :to="`/board/view?no=${no}`">{{ title }}</router-link> -->
-      <router-link :to="{ name: 'board-view', params: { no: no } }">{{
+      <!-- <router-link :to="`/read?no=${no}`">{{ title }}</router-link> -->
+      <router-link :to="`/board/view?no=${no}`">{{ title }}</router-link>
+      <!-- <router-link :to="{ name: 'board-view', params: { no: no } }">{{
         title
-      }}</router-link>
+      }}</router-link> -->
     </td>
     <td>{{ writer }}</td>
     <td>{{ getFormatDate(regtime) }}</td>
@@ -13,7 +14,6 @@
 </template>
 
 <script>
-alert("listrow");
 import moment from "moment";
 
 export default {

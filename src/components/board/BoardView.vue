@@ -1,21 +1,28 @@
 <template>
   <div>
-    ㅇㄹㅇㄹ
     <view-detail></view-detail>
   </div>
 </template>
 
 <script>
-alert("boardview");
+alert("boardv")
 import ViewDetail from "@/components/board/include/ViewDetail.vue";
 
 export default {
   name: "BoardView",
+  data(){
+    return{
+
+    }
+  },
   components: {
     ViewDetail,
   },
+  props:{
+    
+  },
   created() {
-    this.$store.dispatch("getBoard", `/${this.$route.params.no}`);
+    //this.getBoard(no);
   },
 };
 </script>
