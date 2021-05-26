@@ -17,7 +17,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  
+
   routes: [
     {
       path: "/",
@@ -25,29 +25,25 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Home,
-// jisoo
         footer: AppFooter
+        }
       },
-//
-        footer: Footer
-      },
-    },
     {
       path: "/login",
       name: "login",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Login,
-        footer: Footer
+        footer: AppFooter
       }
     },
     {
       path: "/register",
       name: "register",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Register,
-        footer: Footer
+        footer: AppFooter
       }
 // main
     },
@@ -55,9 +51,9 @@ export default new Router({
       path: "/search",
       name: "search",
       components: {
-        //header: Header,
+       header: AppHeader,
         default: Search,
-        //  footer: Footer
+        footer: AppFooter
       },
     },
     {

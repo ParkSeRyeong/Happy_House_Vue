@@ -1,4 +1,5 @@
 <template>
+
   <header class="header-global">
     <base-nav
       class="navbar navbar-expand-md navbar-light fixed-top bg-dark"
@@ -109,9 +110,10 @@
 import BaseNav from "@/components/BaseNav";
 import CloseButton from "@/components/CloseButton";
 export default {
+
   components: {
     BaseNav,
-    CloseButton,
+    CloseButton
   },
 };
 </script>

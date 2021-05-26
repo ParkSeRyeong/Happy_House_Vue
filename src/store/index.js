@@ -18,7 +18,7 @@ export default new Vuex.Store({
     board: {},
 // jisoo
     faqs: [],
-    faq: {}
+    faq: {},
 //
 
     //User
@@ -191,7 +191,7 @@ export default new Vuex.Store({
       axios.get("/faq/" + payload).then(({ data }) => {
         context.commit("setFaq", data);
       });
-//
+    },
     //User
     // 로그인을 시도 -> 토큰을 반환
     login({ commit }, singninObj) {
