@@ -14,6 +14,8 @@ export default new Vuex.Store({
     //Board
     boards: [],
     board: {},
+    faqs: [],
+    faq: {}
   },
   getters: {
     sido(state) {
@@ -35,6 +37,14 @@ export default new Vuex.Store({
     },
     board(state) {
       return state.board;
+    },
+
+    //faq
+    faqs(state) {
+      return state.faqs;
+    },
+    faq(state) {
+      return state.faq;
     }
   },
   mutations: {
@@ -60,6 +70,14 @@ export default new Vuex.Store({
     },
     setBoard(state, payload) {
       state.board = payload;
+    },
+
+    //Board
+    setFaqs(state, payload) {
+      state.faqs = payload;
+    },
+    setFaq(state, payload) {
+      state.faq = payload;
     },
 
     //BoardListItem
@@ -119,6 +137,22 @@ export default new Vuex.Store({
     getBoard(context, payload) {
       axios.get("/board/" + payload).then(({ data }) => {
         context.commit("setBoard", data);
+      });
+    },
+
+    getFaqs(context) {
+      axios
+        .get("/faq")
+        .then(({ data }) => {
+          context.commit("setFaqs", data);
+        })
+        .catch(() => {
+          alert("에러발생!");
+        });
+    },
+    getFaq(context, payload) {
+      axios.get("/faq/" + payload).then(({ data }) => {
+        context.commit("setFaq", data);
       });
     },
   }

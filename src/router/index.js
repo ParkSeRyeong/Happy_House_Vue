@@ -1,10 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
-import Header from "../layout/starter/StarterHeader";
-import Footer from "../layout/starter/StarterFooter";
+// import Header from "../layout/starter/StarterHeader";
+// import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
+import AppHeader from "../layout/AppHeader";
+import AppFooter from "../layout/AppFooter";
 
 Vue.use(Router);
 
@@ -14,9 +16,9 @@ export default new Router({
       path: "/",
       name: "Home",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Home,
-        footer: Footer
+        footer: AppFooter
       },
     },
     {
@@ -33,9 +35,9 @@ export default new Router({
       path: "/board",
       name: "board",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Board,
-        footer: Footer
+        footer: AppFooter
       },
       children: [
         {
@@ -61,6 +63,41 @@ export default new Router({
       ],
       redirect: () => {
         return "/board";
+      }
+    },
+    {
+      path: "/faq",
+      name: "faq",
+      components: {
+        header: AppHeader,
+        default: Board,
+        footer: AppFooter
+      },
+      children: [
+        {
+          path: "",
+          name: "faq-list",
+          component: () => import("@/components/board/FaqList.vue")
+        },
+        {
+          path: "create",
+          name: "faq-create",
+          component: () => import("@/components/board/BoardCreate.vue")
+        },
+        {
+          path: "view",
+          name: "faq-view",
+          component: () => import("@/components/board/FaqView.vue")
+        },
+        {
+          path: "modify/:no",
+          name: "faq-modify",
+          component: () => import("@/components/board/BoardModify.vue")
+        },
+
+      ],
+      redirect: () => {
+        return "/faq";
       }
     },
     // { -------------------------- search detail
