@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 import router from "@/router/index.js";
 import axios from "@/util/http-common";
 import createPersistedState from "vuex-persistedstate";
@@ -16,21 +16,21 @@ export default new Vuex.Store({
     //Board
     boards: [],
     board: {},
-// jisoo
+    // jisoo
     faqs: [],
     faq: {},
-//
+    //
 
     //User
     userInfo: null,
     isLogin: false,
     isLoginError: false,
-// main
+    // main
   },
   plugins: [
     createPersistedState({
-      paths:["userInfo","isLogin"],
-    })  
+      paths: ["userInfo", "isLogin"],
+    }),
   ],
 
   getters: {
@@ -61,7 +61,7 @@ export default new Vuex.Store({
     },
     faq(state) {
       return state.faq;
-    }
+    },
   },
   mutations: {
     get_sido(state, payload) {
@@ -104,7 +104,6 @@ export default new Vuex.Store({
 
     // },
 
-
     //User
     // 로그인이 성공
     loginSuccess(state, payload) {
@@ -126,28 +125,28 @@ export default new Vuex.Store({
   },
   actions: {
     getSido({ commit }) {
-      axios.get('/map/sido').then(({ data }) => {
+      axios.get("/map/sido").then(({ data }) => {
         commit("get_sido", data);
       });
     },
     getGugun({ commit }, sido_code) {
-      axios.get('/map/gugun/' + sido_code).then(({ data }) => {
+      axios.get("/map/gugun/" + sido_code).then(({ data }) => {
         commit("get_gugun", data);
       });
     },
     getDong({ commit }, gugun_code) {
-      axios.get('/map/dong/' + gugun_code).then(({ data }) => {
+      axios.get("/map/dong/" + gugun_code).then(({ data }) => {
         commit("get_dong", data);
       });
     },
     getApts({ commit }, dong) {
-      axios.get('/map/apt/' + dong).then(({ data }) => {
+      axios.get("/map/apt/" + dong).then(({ data }) => {
         commit("get_apts", data);
       });
     },
     selectApt({ commit }, apt) {
-      axios.get('/map/dealInfo/' + apt.dong + '/' + apt.aptName).then(({ data }) => {
-        commit('SELECT_APT', data);
+      axios.get("/map/dealInfo/" + apt.dong + "/" + apt.aptName).then(({ data }) => {
+        commit("SELECT_APT", data);
       });
     },
 
@@ -175,7 +174,7 @@ export default new Vuex.Store({
         context.commit("setBoard", data);
       });
     },
-// jisoo
+    // jisoo
 
     getFaqs(context) {
       axios
@@ -204,21 +203,25 @@ export default new Vuex.Store({
           // 토큰을 로컬 스토리지에 저장
           // 로컬 스토리지에 토큰이 있다면 새로고침시 멤버 정보를 다시 요청
           const token = res.data.token;
-          if (typeof (token) !== 'undefined') {
+          if (typeof token !== "undefined") {
             let obj = {
+              id: res.data.id,
+              pw: res.data.pw,
               name: res.data.name,
               phone: res.data.phone,
               email: res.data.email,
+              postcode: res.data.postcode,
+              address: res.data.address,
+              extraAddress: res.data.extraAddress,
             };
             commit("loginSuccess", obj);
             localStorage.setItem("access_token", token); // 저장
             router.push({ name: "Home" }); // 홈 화면으로 이동
-          }
-          else{
+          } else {
             alert("아이디 혹은 패스워드가 틀렸습니다.");
           }
           //dispatch("getMemberInfo");
-        }) 
+        })
         .catch((error) => {
           console.log(error);
           commit("loginError");
@@ -228,8 +231,8 @@ export default new Vuex.Store({
     logout({ commit }) {
       commit("logout"); // store에 상태 값들을 바꿔준다.
       localStorage.removeItem("access_token"); // 토큰도 지워준다.
-      router.push({name: "Home"});
-// main
+      router.push({ name: "Home" });
+      // main
     },
-  }
+  },
 });

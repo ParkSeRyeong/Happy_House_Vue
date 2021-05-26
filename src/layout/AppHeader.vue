@@ -6,9 +6,7 @@
       </router-link>
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
-          <a
-            href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
-          >
+          <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
             <img src="../images_happy/logo.png" />
           </a>
         </div>
@@ -20,52 +18,46 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <router-link to="/" class="dropdown-item">Home</router-link>
         <base-dropdown tag="li" class="nav-item">
-          <a
-            slot="title"
-            href="#"
-            class="nav-link"
-            data-toggle="dropdown"
-            role="button"
-          >
+          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Notice</span>
           </a>
           <router-link to="/board" class="dropdown-item">공지사항</router-link>
           <router-link to="/faq" class="dropdown-item">FAQ</router-link>
-          <router-link to="/qna" class="dropdown-item"
-            >1:1 질문하기</router-link
-          >
+          <router-link to="/qna" class="dropdown-item">1:1 질문하기</router-link>
         </base-dropdown>
         <base-dropdown tag="li" class="nav-item">
-          <a
-            slot="title"
-            href="#"
-            class="nav-link"
-            data-toggle="dropdown"
-            role="button"
-          >
+          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">MyArea</span>
           </a>
           <router-link to="/landing" class="dropdown-item">Landing</router-link>
           <router-link to="/profile" class="dropdown-item">Profile</router-link>
           <router-link to="/login" class="dropdown-item">Login</router-link>
-          <router-link to="/register" class="dropdown-item"
-            >Register</router-link
-          >
+          <router-link to="/register" class="dropdown-item">Register</router-link>
         </base-dropdown>
       </ul>
+
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-        <li class="nav-item">
-          <router-link to="/login" class="dropdown-item">
-            <i class="fa fa-user"> Login</i>
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/login" class="dropdown-item">
-            <i class="fa fa-user-plus"> Sign up</i>
-          </router-link>
-        </li>
+        <div class="navbar-nav ml-auto" v-if="!isLogin">
+          <li class="nav-item">
+            <a href="/register" class="nav-link"> Sign Up </a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="nav-link"> Login </a>
+          </li>
+        </div>
+
+        <div class="navbar-nav ml-auto" v-else>
+          <li class="nav-item">
+            <a href="/profile" class="nav-link">
+              {{ userInfo.name }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link" @click="logout"> LogOut </a>
+          </li>
+        </div>
         <li class="nav-item d-none d-lg-block ml-lg-4">
           <a
             href="https://github.com/ParkSeRyeong/Happy_House.git"
@@ -87,14 +79,23 @@
 import BaseNav from "@/components/BaseNav";
 import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
+import { mapState, mapActions } from "vuex";
 
 export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["isLogin", "userInfo"]),
+  },
   components: {
     BaseNav,
     CloseButton,
     BaseDropdown,
   },
+  methods: {
+    ...mapActions(["logout"]),
+  },
 };
 </script>
-<style>
-</style>
+<style></style>
