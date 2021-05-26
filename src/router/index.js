@@ -5,12 +5,19 @@ import Home from "../views/Home.vue";
 // import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
+//jisoo
 import AppHeader from "../layout/AppHeader";
 import AppFooter from "../layout/AppFooter";
+//
+import Login from "../views/Login.vue";
+import Register from "../views/Register.vue";
+// main
 
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
+  
   routes: [
     {
       path: "/",
@@ -18,8 +25,31 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Home,
+// jisoo
         footer: AppFooter
       },
+//
+        footer: Footer
+      },
+    },
+    {
+      path: "/login",
+      name: "login",
+      components: {
+        header: Header,
+        default: Login,
+        footer: Footer
+      }
+    },
+    {
+      path: "/register",
+      name: "register",
+      components: {
+        header: Header,
+        default: Register,
+        footer: Footer
+      }
+// main
     },
     {
       path: "/search",
@@ -30,7 +60,6 @@ export default new Router({
         //  footer: Footer
       },
     },
-
     {
       path: "/board",
       name: "board",
@@ -111,11 +140,3 @@ export default new Router({
     // },
   ]
 });
-// eslint - disable - next - line no - unused - vars
-// const router = new VueRouter({
-//   mode: "history",
-//   base: process.env.BASE_URL,
-//   routes,
-// });
-
-// export default router;

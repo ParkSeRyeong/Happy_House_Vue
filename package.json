@@ -20,12 +20,17 @@
     "nouislider": "^15.1.0",
     "register-service-worker": "^1.7.2",
     "vue": "^2.6.12",
+// jisoo
     "vue-fullpage.js": "^0.1.7",
     "vue-hacker-text": "^1.0.0",
+//
+    "vue-daum-postcode": "^0.9.0",
+// main
     "vue-lazyload": "^1.3.3",
     "vue-router": "^3.2.0",
     "vue2-transitions": "^0.3.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~4.5.0",
