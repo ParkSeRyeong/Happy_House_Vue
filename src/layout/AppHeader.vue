@@ -39,6 +39,7 @@
       </ul>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+<<<<<<< Updated upstream
         <div class="navbar-nav ml-auto" v-if="!isLogin">
           <li class="nav-item">
             <a href="/register" class="nav-link"> Sign Up </a>
@@ -58,6 +59,18 @@
             <a href="" class="nav-link" @click="logout"> LogOut </a>
           </li>
         </div>
+=======
+        <li class="nav-item">
+          <router-link to="/login" class="dropdown-item">
+            <i class="fa fa-user"> Login</i>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/register" class="dropdown-item">
+            <i class="fa fa-user-plus"> Sign up</i>
+          </router-link>
+        </li>
+>>>>>>> Stashed changes
         <li class="nav-item d-none d-lg-block ml-lg-4">
           <a
             href="https://github.com/ParkSeRyeong/Happy_House.git"
