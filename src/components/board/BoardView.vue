@@ -1,6 +1,8 @@
 <template>
   <div>
+
     <view-detail />
+
   </div>
 </template>
 
