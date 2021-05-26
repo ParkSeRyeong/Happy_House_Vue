@@ -29,9 +29,6 @@
                             </div>
                         </template>
                         <template>
-                            <div class="text-center text-muted mb-4">
-                                <small>Or sign in with credentials</small>
-                            </div>
                             <form role="form">
                                 <base-input alternative
                                             class="mb-3"
@@ -56,19 +53,20 @@
                                         email: email,
                                         password: password,
                                         })
-                                    ">Sign In</base-button>
+                                    "
+                                    >Sign In</base-button>
                                 </div>
                             </form>
                         </template>
                     </card>
                     <div class="row mt-3">
                         <div class="col-6">
-                            <a href="#" class="text-light">
+                            <a href="" class="text-light">
                                 <small>Forgot password?</small>
                             </a>
                         </div>
                         <div class="col-6 text-right">
-                            <a href="#" class="text-light">
+                            <a href="/register" class="text-light">
                                 <small>Create new account</small>
                             </a>
                         </div>

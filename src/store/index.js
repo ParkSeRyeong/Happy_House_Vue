@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import router from "@/router/index.js";
 import axios from "@/util/http-common";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
@@ -14,11 +16,18 @@ export default new Vuex.Store({
     //Board
     boards: [],
     board: {},
+
     //User
-    userInfo: {},
+    userInfo: null,
     isLogin: false,
     isLoginError: false,
   },
+  plugins: [
+    createPersistedState({
+      paths:["userInfo","isLogin"],
+    })  
+  ],
+
   getters: {
     sido(state) {
       return state.sido;
@@ -131,80 +140,58 @@ export default new Vuex.Store({
 
     //BoardList
     getBoards(context) {
-      axios.get("/api/board")
+      axios
+        .get("/board")
         .then(({ data }) => {
-          console.log(data),
-            context.commit("setBoards", data);
+          context.commit("setBoards", data);
         })
-        .catch((error) => {
-          console.dir(error);
-          alert("에러발생!!!");
+        .catch(() => {
+          alert("에러발생!");
         });
     },
-    getBoard({ commit }, no) {
-      axios.get("/api/board/view" + no).then(({ data }) => {
-        alert("asdfasdfa")
-          commit("setBoard", data);
+
+    getBoard(context, payload) {
+      axios.get("/board/" + payload).then(({ data }) => {
+        context.commit("setBoard", data);
       });
     },
-
     //User
     // 로그인을 시도 -> 토큰을 반환
-    login({ commit, dispatch }, singninObj) {
+    login({ commit }, singninObj) {
       axios
         .post("/user/login", {
-          email: singninObj.email,
-          password: singninObj.password,
+          id: singninObj.email,
+          pw: singninObj.password,
         })
         .then((res) => {
-          alert("success")
           // 토큰을 로컬 스토리지에 저장
           // 로컬 스토리지에 토큰이 있다면 새로고침시 멤버 정보를 다시 요청
-          let token = res.data.token;
-          localStorage.setItem("access_token", token); // 저장
-          dispatch("getMemberInfo");
-        })
+          const token = res.data.token;
+          if (typeof (token) !== 'undefined') {
+            let obj = {
+              name: res.data.name,
+              phone: res.data.phone,
+              email: res.data.email,
+            };
+            commit("loginSuccess", obj);
+            localStorage.setItem("access_token", token); // 저장
+            router.push({ name: "Home" }); // 홈 화면으로 이동
+          }
+          else{
+            alert("아이디 혹은 패스워드가 틀렸습니다.");
+          }
+          //dispatch("getMemberInfo");
+        }) 
         .catch((error) => {
           console.log(error);
           commit("loginError");
         });
     },
 
-    // logout({ commit }) {
-    //   commit("logout"); // store에 상태 값들을 바꿔준다.
-    //   localStorage.removeItem("access_token"); // 토큰도 지워준다.
-    //   router.push({ name: "Home" });
-    // },
-
-    // 새로고침이 될때마다 실행이 되게끔
-    getMemberInfo({ commit }) {
-      // 로컬 스토리지에 저장되어 있는 토큰을 불러온다.
-      let config = {
-        headers: {
-          "access-toketn": localStorage.getItem("access_token"),
-        },
-      };
-      // 반환된 토큰을 사용해 유저 정보를 받아온다
-      // 새로 고침 -> 토큰만 가지고 멤버 정보를 요청
-      if (localStorage.getItem("access_token")) {
-        axios
-          .get("https://reqres.in/api/users/2", config)
-          .then((response) => {
-            let obj = {
-              avatar: response.data.data.avatar,
-              email: response.data.data.email,
-              first_name: response.data.data.first_name,
-              id: response.data.data.id,
-              last_name: response.data.data.last_name,
-            };
-            commit("loginSuccess", obj);
-          })
-          .catch((err) => {
-            console.log(err);
-            commit("loginError");
-          });
-      }
+    logout({ commit }) {
+      commit("logout"); // store에 상태 값들을 바꿔준다.
+      localStorage.removeItem("access_token"); // 토큰도 지워준다.
+      router.push({name: "Home"});
     },
-
   }
 });

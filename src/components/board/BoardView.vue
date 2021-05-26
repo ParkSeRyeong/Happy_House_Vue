@@ -1,20 +1,14 @@
 <template>
   <div>
-    <view-detail></view-detail>
+    <view-detail />
   </div>
 </template>
 
 <script>
-alert("boardv")
 import ViewDetail from "@/components/board/include/ViewDetail.vue";
 
 export default {
-  name: "BoardView",
-  data(){
-    return{
-
-    }
-  },
+  name: "boardview",
   components: {
     ViewDetail,
   },
@@ -22,7 +16,7 @@ export default {
     
   },
   created() {
-    //this.getBoard(no);
+    this.$store.dispatch("getBoard", `/${this.$route.query.no}`);
   },
 };
 </script>

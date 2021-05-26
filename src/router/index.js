@@ -6,10 +6,13 @@ import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
 import Login from "../views/Login.vue";
+import Register from "../views/Register.vue";
 
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
+  
   routes: [
     {
       path: "/",
@@ -26,6 +29,15 @@ export default new Router({
       components: {
         header: Header,
         default: Login,
+        footer: Footer
+      }
+    },
+    {
+      path: "/register",
+      name: "register",
+      components: {
+        header: Header,
+        default: Register,
         footer: Footer
       }
     },
@@ -58,9 +70,8 @@ export default new Router({
           component: () => import("@/components/board/BoardCreate.vue")
         },
         {
-          path: "view?no=",
+          path: "view",
           name: "board-view",
-          props: true,
           component: () => import("@/components/board/BoardView.vue")
         },
         {
@@ -84,7 +95,8 @@ export default new Router({
     // },
   ]
 });
-// eslint-disable-next-line no-unused-vars
+
+//eslint - disable - next - line no - unused - vars
 // const router = new VueRouter({
 //   mode: "history",
 //   base: process.env.BASE_URL,

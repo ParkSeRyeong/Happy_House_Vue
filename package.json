@@ -21,11 +21,13 @@
     "popper.js": "^1.16.1",
     "register-service-worker": "^1.7.2",
     "vue": "^2.6.12",
+    "vue-daum-postcode": "^0.9.0",
     "vue-lazyload": "^1.3.3",
     "vue-roller": "^1.12.5",
     "vue-router": "^3.2.0",
     "vue2-transitions": "^0.3.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

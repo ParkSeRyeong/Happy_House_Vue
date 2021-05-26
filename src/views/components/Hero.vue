@@ -17,15 +17,13 @@
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white  font-weight-light mb-5">우 리 집 찾 기 프 로 젝 트</p>
                         <!-- <router-link to="/search">Login</router-link> -->
-                        <a class="btn btn-success btn-xl js-scroll-trigger" href="#">
+                        <a class="btn btn-success btn-xl js-scroll-trigger" href="">
                           <router-link to="/Search" style="color:white;">SEARCH!!</router-link>
                         </a>                    
                     </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -33,6 +31,7 @@
   
 </template>
 <script>
+
 export default {
   name:"",
   methods: {
