@@ -11,7 +11,11 @@ import AppFooter from "../layout/AppFooter";
 //
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+
 // main
+
+import MyPage from "../views/MyPage.vue";
+
 
 Vue.use(Router);
 
@@ -50,6 +54,15 @@ export default new Router({
         footer: Footer
       }
 // main
+    },
+    {
+      path: "/mypage",
+      name: "mypage",
+      components: {
+        header: Header,
+        default: MyPage,
+        footer: Footer,
+      },
     },
     {
       path: "/search",
