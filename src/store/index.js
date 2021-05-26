@@ -16,11 +16,16 @@ export default new Vuex.Store({
     //Board
     boards: [],
     board: {},
+// jisoo
+    faqs: [],
+    faq: {}
+//
 
     //User
     userInfo: null,
     isLogin: false,
     isLoginError: false,
+// main
   },
   plugins: [
     createPersistedState({
@@ -48,6 +53,14 @@ export default new Vuex.Store({
     },
     board(state) {
       return state.board;
+    },
+
+    //faq
+    faqs(state) {
+      return state.faqs;
+    },
+    faq(state) {
+      return state.faq;
     }
   },
   mutations: {
@@ -73,6 +86,14 @@ export default new Vuex.Store({
     },
     setBoard(state, payload) {
       state.board = payload;
+    },
+
+    //Board
+    setFaqs(state, payload) {
+      state.faqs = payload;
+    },
+    setFaq(state, payload) {
+      state.faq = payload;
     },
 
     //BoardListItem
@@ -154,6 +175,23 @@ export default new Vuex.Store({
         context.commit("setBoard", data);
       });
     },
+// jisoo
+
+    getFaqs(context) {
+      axios
+        .get("/faq")
+        .then(({ data }) => {
+          context.commit("setFaqs", data);
+        })
+        .catch(() => {
+          alert("에러발생!");
+        });
+    },
+    getFaq(context, payload) {
+      axios.get("/faq/" + payload).then(({ data }) => {
+        context.commit("setFaq", data);
+      });
+//
     //User
     // 로그인을 시도 -> 토큰을 반환
     login({ commit }, singninObj) {
@@ -191,6 +229,7 @@ export default new Vuex.Store({
       commit("logout"); // store에 상태 값들을 바꿔준다.
       localStorage.removeItem("access_token"); // 토큰도 지워준다.
       router.push({name: "Home"});
+// main
     },
   }
 });

@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1 class="underline">공지사항 목록</h1>
+    <h1 class="underline">자주하는 질문</h1>
     <div class="text-right">
-      <button class="btn btn-primary" @click="movePage">게시물 등록</button>
+      <button class="btn btn-primary" @click="movePage">
+        1:1 질문 등록하기
+      </button>
     </div>
-    <div v-if="boards.length">
+    <div v-if="faqs.length">
       <table class="table table-bordered table-condensed">
         <colgroup>
           <col :style="{ width: '5%' }" />
@@ -18,13 +20,13 @@
           <th>작성자</th>
           <th>날짜</th>
         </tr>
-        <list-row
-          v-for="(board, index) in boards"
+        <list-row-faq
+          v-for="(faq, index) in faqs"
           :key="`${index}_items`"
-          :no="board.no"
-          :title="board.title"
-          :writer="board.writer"
-          :regtime="board.regtime"
+          :no="faq.no"
+          :title="faq.title"
+          :writer="faq.writer"
+          :regtime="faq.regtime"
         />
       </table>
     </div>
@@ -34,29 +36,24 @@
 
 <script>
 import { mapGetters } from "vuex";
-import ListRow from "@/components/board/include/ListRow.vue";
+import ListRowFaq from "@/components/board/include/ListRowFaq.vue";
 // import BoardCreate from "@/components/board/BoardCreate.vue";
 
 export default {
-  name: "boardList",
+  name: "faqList",
   components: {
-    ListRow,
+    ListRowFaq,
     // BoardCreate,
   },
-  data() {
-    return {
-      write_type: this.write_type,
-    };
-  },
   computed: {
-    ...mapGetters(["boards"]),
+    ...mapGetters(["faqs"]),
   },
   created() {
-    this.$store.dispatch("getBoards");
+    this.$store.dispatch("getFaqs");
   },
   methods: {
     movePage() {
-      this.$router.push({ name: "board-create" });
+      this.$router.push({ name: "faq-create" });
     },
   },
 };

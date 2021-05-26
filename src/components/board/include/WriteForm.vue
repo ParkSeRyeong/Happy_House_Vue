@@ -50,6 +50,23 @@
         placeholder="내용을 입력하세요."
       ></textarea
       ><br />
+      <div>
+        <input
+          type="radio"
+          id="write_type"
+          v-model="write_type"
+          name="write_type"
+          value="notice"
+          checked="checked"
+        />공지사항
+        <input
+          type="radio"
+          id="write_type"
+          v-model="write_type"
+          name="write_type"
+          value="faq"
+        />FAQ
+      </div>
       <button v-if="type == 'create'" @click="checkValue">등록</button>
       <button v-else @click="checkValue">수정</button>
       <button @click="moveList">목록</button>
@@ -100,6 +117,7 @@ export default {
     return {
       title: "",
       content: "",
+      write_type: "",
     };
   },
   created() {
@@ -108,11 +126,13 @@ export default {
         this.no = data.no;
         this.title = data.title;
         this.content = data.content;
+        this.write_type = data.write_type;
       });
     }
   },
   methods: {
     // 입력값 체크하기 - 체크가 성공하면 registBoard 호출
+
     checkValue() {
       // 사용자 입력값 체크하기
       let err = true;
@@ -127,15 +147,23 @@ export default {
         (err = false),
         this.$refs.content.focus());
 
+      if (this.write_type == "notice") alert("공지사항을 입력합니다.");
+      else alert("FAQ을 입력합니다.");
+
       if (!err) alert(msg);
       // 만약, 내용이 다 입력되어 있다면 registBoard 호출
       else this.type == "create" ? this.registBoard() : this.modifyBoard();
     },
     registBoard() {
+      let rootName = "";
+      if (this.write_type == "notice") rootName = "board";
+      else rootName = "faq";
+
       axios
-        .post("board", {
+        .post(rootName, {
           title: this.title,
           content: this.content,
+          write_type: this.write_type,
         })
         .then(({ data }) => {
           let msg = "등록 처리시 문제가 발생했습니다.";
@@ -147,11 +175,16 @@ export default {
         });
     },
     modifyBoard() {
+      let rootName = "";
+      if (this.write_type == "notice") rootName = "board";
+      else rootName = "faq";
+
       axios
-        .put(`board/${this.no}`, {
+        .put(`${rootName}/${this.no}`, {
           title: this.title,
           content: this.content,
           no: this.no,
+          write_type: this.write_type,
         })
         .then(({ data }) => {
           let msg = "수정 처리시 문제가 발생했습니다.";
@@ -159,11 +192,15 @@ export default {
             msg = "수정이 완료되었습니다.";
           }
           alert(msg);
-          this.$router.push("/board");
+          this.$router.push("/" + rootName);
         });
     },
     moveList() {
-      this.$router.push("/board");
+      let rootName = "";
+      if (this.write_type == "notice") rootName = "board";
+      else rootName = "faq";
+
+      this.$router.push("/" + rootName);
     },
   },
 };
