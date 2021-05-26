@@ -1,24 +1,58 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
-import Header from "../layout/starter/StarterHeader";
-import Footer from "../layout/starter/StarterFooter";
+// import Header from "../layout/starter/StarterHeader";
+// import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
+//jisoo
+import AppHeader from "../layout/AppHeader";
+import AppFooter from "../layout/AppFooter";
+//
+import Login from "../views/Login.vue";
+import Register from "../views/Register.vue";
+// main
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
   routes: [
     {
       path: "/",
       name: "Home",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Home,
+// jisoo
+        footer: AppFooter
+      },
+//
         footer: Footer
       },
+    },
+    {
+      path: "/login",
+      name: "login",
+      components: {
+        header: Header,
+        default: Login,
+        footer: Footer
+      }
+    },
+    {
+      path: "/register",
+      name: "register",
+      components: {
+        header: Header,
+        default: Register,
+        footer: Footer
+      }
+// main
     },
     {
       path: "/search",
@@ -29,14 +63,13 @@ export default new Router({
         footer: Footer
       },
     },
-
     {
       path: "/board",
       name: "board",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Board,
-        footer: Footer
+        footer: AppFooter
       },
       children: [
         {
@@ -64,6 +97,41 @@ export default new Router({
         return "/board";
       }
     },
+    {
+      path: "/faq",
+      name: "faq",
+      components: {
+        header: AppHeader,
+        default: Board,
+        footer: AppFooter
+      },
+      children: [
+        {
+          path: "",
+          name: "faq-list",
+          component: () => import("@/components/board/FaqList.vue")
+        },
+        {
+          path: "create",
+          name: "faq-create",
+          component: () => import("@/components/board/BoardCreate.vue")
+        },
+        {
+          path: "view",
+          name: "faq-view",
+          component: () => import("@/components/board/FaqView.vue")
+        },
+        {
+          path: "modify/:no",
+          name: "faq-modify",
+          component: () => import("@/components/board/BoardModify.vue")
+        },
+
+      ],
+      redirect: () => {
+        return "/faq";
+      }
+    },
     // { -------------------------- search detail
     //   path: "/",
     //   name: "Home",
@@ -75,11 +143,3 @@ export default new Router({
     // },
   ]
 });
-// eslint - disable - next - line no - unused - vars
-// const router = new VueRouter({
-//   mode: "history",
-//   base: process.env.BASE_URL,
-//   routes,
-// });
-
-// export default router;

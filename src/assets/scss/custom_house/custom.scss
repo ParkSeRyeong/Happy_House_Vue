@@ -1,13 +1,15 @@
 /* custom */
-// .mainbg {
-//    // padding-top: 8rem;
-//     padding-bottom: calc(10rem - 4.5rem);
-//     background: linear-gradient(to bottom, rgba(39, 37, 36, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/images_happy/mainBackground.jpg');
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-attachment: scroll;
-//     background-size: cover;
-//   }
+
+.mainbg {
+   // padding-top: 8rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(39, 37, 36, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/images_happy/mainBackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
   .mainbg-search {
     padding-top: 8rem;
    }
@@ -48,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
   .tcenter{
@@ -10247,3 +10250,4 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+

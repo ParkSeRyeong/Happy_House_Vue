@@ -12,6 +12,9 @@ export default {
   components: {
     ViewDetail,
   },
+  props:{
+    
+  },
   created() {
     this.$store.dispatch("getBoard", `/${this.$route.query.no}`);
   },

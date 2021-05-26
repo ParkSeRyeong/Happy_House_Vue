@@ -33,22 +33,44 @@ export default {
   },
   props: {
     apt: Object,
+<<<<<<< HEAD
+=======
+  },
+  
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
   methods: {
-    // chooseApt() {
-    //   // this.$emit('select-apt', this.apt);
-    //   this.$store.dispatch('selectApt', this.apt);
-    // },
     ...mapActions(['selectApt']),
+    
     chooseApt() {
       alert("클릭!");
       this.selectApt(this.apt);
-    },
-    colorChange(flag) {
+
+      /* global kakao */
+      var container = document.getElementById('map');
+      var options = {
+          center: new kakao.maps.LatLng(this.apt.lat, this.apt.lng),
+          level: 3
+      };
+
+      var map = new kakao.maps.Map(container, options);
+
+      map.panTo(options.center);
+              
+      var marker = new kakao.maps.Marker({
+       position: options.center
+       });
+       marker.setMap(map);
+
+      },
+      colorChange(flag) {
       this.isColor = flag;
     },
   },
 }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
 </script>
 
 <style scoped>

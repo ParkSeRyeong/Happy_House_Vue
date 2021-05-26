@@ -2,24 +2,40 @@
   <!--mb = margin bottom-->
   <b-container class="mb-3 fontToWhite">
     <b-row class="centerize mt-4 mb-4">
+<<<<<<< HEAD
       <!-- <b-col cols="1 centerize">시 :</b-col> -->
       <b-col cols="4">
         <b-form-select id="sido" v-model="SidoCode" @change="getGugunCode" placeholder="시/도">
+=======
+      <b-col cols="1 centerize">시 :</b-col>
+      <b-col cols="3">
+        <b-form-select id="sido" v-model="SidoCode" @change="getGugunCode">
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
           <option v-for="(option, index) in sido" :key="index" :value="option.sido_code">
             {{ option.sido_name }}
           </option>
         </b-form-select>
       </b-col>
+<<<<<<< HEAD
       <!-- <b-col cols="1 centerize">구 군 :</b-col> -->
       <b-col cols="4">
+=======
+      <b-col cols="1 centerize">구 군 :</b-col>
+      <b-col cols="3">
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
         <b-form-select id="gugun" v-model="GugunCode" @change="getDongCode">
           <option v-for="(option, index) in gugun" :key="index" :value="option.gugun_code">
             {{ option.gugun_name }}
           </option>
         </b-form-select>
       </b-col>
+<<<<<<< HEAD
       <!-- <b-col cols="1 centerize"> 동 :</b-col> -->
       <b-col cols="4">
+=======
+      <b-col cols="1 centerize"> 동 :</b-col>
+      <b-col cols="3">
+>>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
         <b-form-select id="dong" v-model="Dong" @change="getAptName">
           <option v-for="(option, index) in dong" :key="index" :value="option.dong">
             {{ option.dong }}
