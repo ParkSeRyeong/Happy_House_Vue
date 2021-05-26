@@ -1,23 +1,26 @@
 <template>
-  <div>
-    <table class="table table-bordered w-50">
-      <tr>
+  <div class="container text-center fontToWhite">
+    <h1 class="underline">공지사항</h1>
+    <br />
+    <br />
+    <table class="table table-striped" style="text-align:center;">
+      <tr class="fontToWhite" style="height:50px;">
         <th>번호</th>
         <td>{{ board.no }}</td>
       </tr>
-      <tr>
+      <tr class="fontToWhite" style="height:50px;">
         <th>글쓴이</th>
         <td>{{ board.writer }}</td>
       </tr>
-      <tr>
+      <tr style="height:50px;">
         <th>제목</th>
-        <td>{{ board.title }}</td>
+        <td> {{ board.title }}</td>
       </tr>
-      <tr>
+      <tr style="height:50px;">
         <th>날짜</th>
         <td>{{ getFormatDate(board.regtime) }}</td>
       </tr>
-      <tr>
+      <tr style="height:150px; text-align:center;">
         <td colspan="2">
           {{ board.content }}
         </td>
@@ -26,11 +29,9 @@
 
     <br />
     <div class="text-center">
-      <router-link to="/board" class="btn">목록</router-link>
-      <router-link :to="`/board/modify/${board.no}`" class="btn"
-        >수정</router-link
-      >
-      <a href="#" class="btn" @click="deleteBoard">삭제</a>
+      <router-link to="/board"><b-button variant="outline-light">목록</b-button></router-link>
+      <router-link :to="`/board/modify/${board.no}`"><b-button variant="outline-light">수정</b-button></router-link>
+      <a href="#" @click="deleteBoard"><b-button variant="outline-light">삭제</b-button></a>
     </div>
   </div>
 </template>
@@ -102,4 +103,10 @@ textarea,
   color: #787878;
   font-size: medium;
 }
+th{
+  padding:10px;
+  font-weight:bold;
+  background:#787878;
+}
+
 </style>

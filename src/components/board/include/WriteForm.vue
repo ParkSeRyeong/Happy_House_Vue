@@ -1,5 +1,5 @@
 <template>
-  <div class="regist container">
+  <div class="regist container fontToWhite">
     <h2 class="underline">
       게시물
       <template v-if="type == 'create'">등록</template>
@@ -18,7 +18,7 @@
     </div> -->
 
     <div class="regist_form">
-      <label for="title">제목</label>
+      <label for="title"><h3>제목</h3></label>
       <input
         class="form-control"
         v-if="type == 'create'"
@@ -30,6 +30,7 @@
         placeholder="제목을 입력하세요."
       />
       <input
+        class="form-control"
         v-else
         type="text"
         id="title"
@@ -38,7 +39,7 @@
         ref="title"
         readonly
       /><br />
-      <label for="content">내용</label><br />
+      <label for="content"><h3>내용</h3></label><br />
       <textarea
         class="form-control"
         type="text"
@@ -50,9 +51,9 @@
         placeholder="내용을 입력하세요."
       ></textarea
       ><br />
-      <button v-if="type == 'create'" @click="checkValue">등록</button>
-      <button v-else @click="checkValue">수정</button>
-      <button @click="moveList">목록</button>
+      <b-button v-if="type == 'create'" variant="outline-light" @click="checkValue">등록</b-button>
+      <b-button v-else variant="outline-light" @click="checkValue">수정</b-button>
+      <b-button  variant="outline-light" @click="moveList">목록</b-button>
     </div>
 
     <!-- <div class="form-group">

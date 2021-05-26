@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="container" style="text-align:center;">
     <view-detail />
   </div>
+
 </template>
 
 <script>
@@ -11,9 +12,6 @@ export default {
   name: "boardview",
   components: {
     ViewDetail,
-  },
-  props:{
-    
   },
   created() {
     this.$store.dispatch("getBoard", `/${this.$route.query.no}`);

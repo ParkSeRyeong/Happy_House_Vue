@@ -14,7 +14,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-5">
           <card
-            type="secondary"
+            type="light"
             shadow
             header-classes="bg-white pb-5"
             body-classes="px-lg-5 py-lg-5"
@@ -40,7 +40,7 @@
                   alternative
                   class="mb-3"
                   placeholder="Name"
-                  addon-left-icon="ni ni-hat-3"
+                  addon-left-icon="ni ni-single-02"
                   v-model="name"
                 >
                 </base-input>
@@ -48,7 +48,7 @@
                   alternative
                   class="mb-3"
                   placeholder="ID"
-                  addon-left-icon="ni ni-email-83"
+                  addon-left-icon="ni ni-circle-08"
                   v-model="id"
                 >
                 </base-input>
@@ -63,14 +63,14 @@
                 <base-input
                   alternative
                   placeholder="Phone"
-                  addon-left-icon="ni ni-lock-circle-open"
+                  addon-left-icon="ni ni-mobile-button"
                   v-model="phone"
                 >
                 </base-input>
                 <base-input
                   alternative
                   placeholder="Email"
-                  addon-left-icon="ni ni-lock-circle-open"
+                  addon-left-icon="ni ni-email-83"
                   v-model="email"
                 >
                 </base-input>
@@ -98,13 +98,14 @@
                   >
                   </base-input>
 
+                  
                   <input type="button" value="우편번호 찾기" @click="execDaumPostcode" />
-
+                  <br/>
                   <base-input
                     alternative
                     class="mb-3"
                     placeholder="주소"
-                    addon-left-icon="ni ni-email-83"
+                    addon-left-icon="ni ni-square-pin"
                     v-model="address"
                   >
                   </base-input>
@@ -113,7 +114,7 @@
                     alternative
                     class="mb-3"
                     placeholder="상세주소"
-                    addon-left-icon="ni ni-email-83"
+                    addon-left-icon="ni ni-square-pin"
                     v-model="extraAddress"
                   >
                   </base-input>

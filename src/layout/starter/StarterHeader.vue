@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">공지사항</a></li>
+          <li class="nav-item"><a href="/board" class="nav-link">공지사항</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Q&A</a></li>
           <li class="nav-item"><a href="#" class="nav-link">우리동네</a></li>
         </ul>
@@ -47,7 +47,7 @@
 	          <li class="nav-item"><a href="" class="nav-link">공지사항</a></li>
 	          <li class="nav-item"><a href="" class="nav-link">Q&A</a></li>
 	          <li class="nav-item"><a href="" class="nav-link">우리동네</a></li>
-	        </ul>
+	        </ul> -->
 	        <!-- 여기 추가했어여 -->
             <div class="navbar-nav ml-auto" v-if="!isLogin">
                 <li class="nav-item">
@@ -72,7 +72,7 @@
                 </a>
                 </li>
             </div>
-	      </div>
+	      
 
     </base-nav>
   </header>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="text-align:center;">
     <write-form type="modify" />
   </div>
 </template>

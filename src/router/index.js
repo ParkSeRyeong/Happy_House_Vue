@@ -7,6 +7,7 @@ import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import MyPage from "../views/MyPage.vue";
 
 Vue.use(Router);
 
@@ -40,6 +41,15 @@ export default new Router({
         default: Register,
         footer: Footer
       }
+    },
+    {
+      path: "/mypage",
+      name: "mypage",
+      components: {
+        header: Header,
+        default: MyPage,
+        footer: Footer,
+      },
     },
     {
       path: "/search",
