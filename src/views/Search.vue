@@ -1,14 +1,13 @@
-<<<<<<< HEAD
+
 <template lang="html">
   <div class="fontToWhite mainbg-search" id="app">
     <b-container class="bv-example-row" >
       <b-row>
-       
         <div class="col-md-12 pb-0 text-center">
           <h1 class="mb-4">주택 거래가검색하기</h1>
         </div>
       </b-row>
-      <hr />
+      <hr/>
       <apt-search-bar />
       <b-row class="map-center">
         <div id="map" class="col-lg-12 mb-4"></div>
@@ -23,31 +22,6 @@
       </b-row>
     </b-container>
   </div>
-=======
-<template>
-<div class="fontToWhite mainbg-search" id="app">
-    <b-container class="bv-example-row">
-      <b-row>
-      <div class="col-md-12  ftco-animate pb-0 text-center">
-          	<h1 class="mb-4 bread fontToWhite">주택 거래가검색하기</h1>
-      </div>
-      </b-row>
-    <hr>
-    <apt-search-bar />
-    <b-row class="map-center">
-        <div id="map" class="col-lg-12 mb-4"></div>
-    </b-row>
-    <b-row>
-      <b-col cols="6" align="left">
-        <apt-list />
-      </b-col>
-      <b-col cols="6">
-        <apt-detail />
-      </b-col>
-    </b-row>
-  </b-container>
-</div>
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
 </template>
 
 
@@ -55,7 +29,6 @@
 import AptSearchBar from '@/components/apt/AptSearchBar.vue';
 import AptList from '@/components/apt/AptList.vue';
 import AptDetail from '@/components/apt/AptDetail.vue';
-import Vue from 'vue';
 export default {
   name: 'Apt',
   data() {
@@ -84,18 +57,6 @@ export default {
     toggle() {
       this.show = !this.show;
     },
-<<<<<<< HEAD
-    //------------------지 도-------------------------
-=======
-    methods: {
-        initMap() {
-            var container = document.getElementById('map');
-            var options = {
-              center: new kakao.maps.LatLng(37.5666805, 126.9784147),
-              level: 5
-            };
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
-
     initMap() {
       var container = document.getElementById('map');
       var options = {
@@ -128,19 +89,12 @@ export default {
       });
     },
   },
-};
+}
 
-new Vue({
-  el: '#transitionTest',
-  data: {
-    isActive: false,
-  },
-});
 </script>
 
 <style lang="css">
 #map {
-<<<<<<< HEAD
   width: 100%;
   height: 400px;
 }
@@ -154,10 +108,3 @@ new Vue({
   opacity: 0;
 }
 </style>
-=======
-    width: 100%;
-    height: 400px;
-}
-
-</style>
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc

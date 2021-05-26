@@ -1,188 +1,53 @@
 <template>
-// jisoo
-  <section class="wrap-banner">
-    <div id="mainPage" data-stellar-background-ratio="0.5">
-      <div class="main-title">
-        <vue-hacker-text class="hacker-text" text="Find our home" />
-        <h2 hidden="true">Find our home</h2>
-        <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
-        <br />
-        <router-link to="/search"
-          ><base-button
-            class="findBtn"
-            type="default"
-            icon="fa fa-search"
-            size="lg"
-            >매물 찾기</base-button
-          ></router-link
-        >
-//
-  <section>
-    <div
-      class="hero-wrap"
-     
-    >
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center">
-          <div class="col-lg-7 col-md-6 d-flex align-items-end">
-            <div class="text">
-              <h1 class="mb-4">Find Perfect <br/>우리집찾기프로젝트</h1>
-              <router-link to="/Search" style="color: white">SEARCH!!</router-link>
-              <p>
-                <a
-                  href="${root }/map/housemap"
-                  class="btn btn-primary py-3 px-4"
-                  >View all properties</a
-                >
-              </p>
-            </div>
+  <vue-scroll-snap :fullscreen="true">
+    <div class="item">
+      <section class="wrap-banner">
+        <div id="mainPage" data-stellar-background-ratio="0.5">
+          <div class="main-title">
+            <vue-hacker-text class="hacker-text" text="Find our home" />
+            <h2 hidden="true">Find our home</h2>
+            <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
+            <br />
+            <router-link to="/search"
+              ><base-button
+                class="findBtn"
+                outline
+                type="secondary"
+                icon="fa fa-search"
+                size="lg"
+                >매물 찾기</base-button
+              ></router-link
+            >
           </div>
+          <vue-particles
+            class="particles-js"
+            color="#000000"
+            :particleOpacity="0.7"
+            linesColor="#000000"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="5"
+            :linesWidth="2"
+            :lineLinked="true"
+            :lineOpacity="0.4"
+            :linesDistance="150"
+            :moveSpeed="3"
+            :hoverEffect="true"
+            hoverMode="grab"
+            :clickEffect="true"
+            clickMode="push"
+          >
+          </vue-particles>
         </div>
-      </div>
-    </div>
 
-    <div class="ftco-section ftco-no-pb ftco-no-pt search-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="search-wrap-1 ftco-animate p-4">
-              <form action="#" class="search-property-1">
-                <div class="row">
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <label for="#">시/도</label>
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon">
-                            <span class="fa fa-chevron-down"></span>
-                          </div>
-                          <select name="" id="" class="form-control">
-                            <option value="">Residence</option>
-                            <option value="">Offices</option>
-                            <option value="">Commercial</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <label for="#">Property Type</label>
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon">
-                            <span class="fa fa-chevron-down"></span>
-                          </div>
-                          <select name="" id="" class="form-control">
-                            <option value="">Residence</option>
-                            <option value="">Offices</option>
-                            <option value="">Commercial</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <label for="#">Location</label>
-                      <div class="form-field">
-                        <div class="icon">
-                          <span class="fa fa-search"></span>
-                        </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Location"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <label for="#">Price Limit</label>
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon">
-                            <span class="fa fa-chevron-down"></span>
-                          </div>
-                          <select name="" id="" class="form-control">
-                            <option value="">$5,000</option>
-                            <option value="">$10,000</option>
-                            <option value="">$50,000</option>
-                            <option value="">$100,000</option>
-                            <option value="">$200,000</option>
-                            <option value="">$300,000</option>
-                            <option value="">$400,000</option>
-                            <option value="">$500,000</option>
-                            <option value="">$600,000</option>
-                            <option value="">$700,000</option>
-                            <option value="">$800,000</option>
-                            <option value="">$900,000</option>
-                            <option value="">$1,000,000</option>
-                            <option value="">$2,000,000</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-self-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <input
-                          type="submit"
-                          value="Search"
-                          class="form-control btn btn-primary"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white  font-weight-light mb-5">우 리 집 찾 기 프 로 젝 트</p>
-                        <!-- <router-link to="/search">Login</router-link> -->
-                        <a class="btn btn-success btn-xl js-scroll-trigger" href="">
-                          <router-link to="/Search" style="color:white;">SEARCH!!</router-link>
-                        </a>                    
-                    </div>
-
-            </div>
-          </div>
-        </div>
-// main
-      </div>
-      <vue-particles
-        class="particles-js"
-        color="#000000"
-        :particleOpacity="0.7"
-        linesColor="#000000"
-        :particlesNumber="80"
-        shapeType="circle"
-        :particleSize="5"
-        :linesWidth="2"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="3"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-      >
-      </vue-particles>
-    </div>
-
-    <!-- <section class="section-hero section-shaped my-0 mainbg">
+        <!-- <section class="section-hero section-shaped my-0 mainbg">
       <div class="shape shape-style-1 shape-primary"></div>
       <div class="container shape-container d-flex align-items-center">
         <div class="col px-0">
           <div class="row justify-content-center align-items-center">
             <div class="col-lg-7 text-center pt-lg">
               <img src="img/brand/white.png" style="width: 200px" class="img-fluid" /> -->
-    <!-- <div
+        <!-- <div
                 class="row h-100 align-items-center justify-content-center text-center"
               >
                 <div class="col-lg-10 align-self-end">
@@ -190,13 +55,13 @@
                     HAPPY HOUSE
                   </h1>
                  <hr class="divider my-4" /> -->
-    <!--</div>
+        <!--</div>
                 <div class="col-lg-8 align-self-baseline">
                   <p class="text-white font-weight-light mb-5">
                     우 리 집 찾 기 프 로 젝 트
                   </p>
                    <router-link to="/search">Login</router-link> -->
-    <!--<a class="btn btn-success btn-xl js-scroll-trigger" href="#">
+        <!--<a class="btn btn-success btn-xl js-scroll-trigger" href="#">
                     <router-link to="/Search" style="color: white"
                       >SEARCH!!</router-link
                     >
@@ -209,7 +74,7 @@
       </div>
     </section> -->
 
-    <!-- <section id="welcome" class="overflow-hidden">
+        <!-- <section id="welcome" class="overflow-hidden">
     <v-row no-gutters>
       <v-col class="hidden-sm-and-down" md="6">
         <v-img
@@ -246,19 +111,131 @@
         />
       </v-col>
     </v-row>-->
-  </section>
+      </section>
+    </div>
+    <div class="item">
+      <section class="wrap-banner">
+        <div id="mainPage" data-stellar-background-ratio="0.5">
+          <div class="main-title">
+            <vue-hacker-text class="hacker-text" text="Find our home" />
+            <h2 hidden="true">Find our home</h2>
+            <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
+            <br />
+            <router-link to="/search"
+              ><base-button
+                class="findBtn"
+                outline
+                type="secondary"
+                icon="fa fa-search"
+                size="lg"
+                >매물 찾기</base-button
+              ></router-link
+            >
+          </div>
+          <vue-particles
+            class="particles-js"
+            color="#000000"
+            :particleOpacity="0.7"
+            linesColor="#000000"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="5"
+            :linesWidth="2"
+            :lineLinked="true"
+            :lineOpacity="0.4"
+            :linesDistance="150"
+            :moveSpeed="3"
+            :hoverEffect="true"
+            hoverMode="grab"
+            :clickEffect="true"
+            clickMode="push"
+          >
+          </vue-particles>
+        </div>
+
+        <!-- <section class="section-hero section-shaped my-0 mainbg">
+      <div class="shape shape-style-1 shape-primary"></div>
+      <div class="container shape-container d-flex align-items-center">
+        <div class="col px-0">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-7 text-center pt-lg">
+              <img src="img/brand/white.png" style="width: 200px" class="img-fluid" /> -->
+        <!-- <div
+                class="row h-100 align-items-center justify-content-center text-center"
+              >
+                <div class="col-lg-10 align-self-end">
+                  <h1 class="text-uppercase text-white font-weight-bold">
+                    HAPPY HOUSE
+                  </h1>
+                 <hr class="divider my-4" /> -->
+        <!--</div>
+                <div class="col-lg-8 align-self-baseline">
+                  <p class="text-white font-weight-light mb-5">
+                    우 리 집 찾 기 프 로 젝 트
+                  </p>
+                   <router-link to="/search">Login</router-link> -->
+        <!--<a class="btn btn-success btn-xl js-scroll-trigger" href="#">
+                    <router-link to="/Search" style="color: white"
+                      >SEARCH!!</router-link
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+        <!-- <section id="welcome" class="overflow-hidden">
+    <v-row no-gutters>
+      <v-col class="hidden-sm-and-down" md="6">
+        <v-img
+          :src="require('@/images_happy/mainBackground.jpg')"
+          height="100vh"
+        />
+      </v-col>
+
+      <v-col
+        class="align-content-space-between layout wrap"
+        cols="12"
+        md="6"
+        :pa-5="$vuetify.breakpoint.smAndDown"
+      >
+        <base-bubble-1 style="transform: rotate(180deg) translateY(25%)" />
+
+        <v-row align="center" justify="center">
+          <v-col cols="10" md="6">
+            <base-heading>Welcome!</base-heading>
+            <base-text>
+              Lorem ipsum dolor sit amet, consectetur ad ipiscin elit. Etiam
+              vulputate augue vel felis gra vida porta. Lorem ipsum dolor sit
+              amet, cons ectetur adipiscing elit.<br />
+              Lorem ipsum dolor sit amet, consectetur ad ipiscin elit. Etiam
+              vulputate augue vel felis gra vida porta. Lorem ipsum dolor sit
+              amet, cons ectetur adipiscing elit.
+            </base-text>
+            <base-btn class="mt-4"> Learn More! </base-btn>
+          </v-col>
+        </v-row>
+
+        <base-bubble-2
+          style="transform: rotate(180deg) translate(-200px, -15%)"
+        />
+      </v-col>
+    </v-row>-->
+      </section>
+    </div>
+  </vue-scroll-snap>
 </template>
-// jisoo
 
 <script >
 import BaseButton from "../../components/BaseButton.vue";
 import VueHackerText from "vue-hacker-text";
-//
-<script>
+import VueScrollSnap from "vue-scroll-snap";
 
-// main
 export default {
-  components: { BaseButton, VueHackerText },
+  components: { BaseButton, VueHackerText, VueScrollSnap },
   name: "",
   data() {
     return {
@@ -273,10 +250,6 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-<style>
-/* @import url("../assets/happyhousecss/style.css"); */
-=======
 <style lang="scss" scopped
 >
 .hacker-text {
@@ -474,6 +447,4 @@ h3 {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIxMiAxMiA0MCA0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAxMiAxMiA0MCA0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNMzIsMTMuNGMtMTAuNSwwLTE5LDguNS0xOSwxOWMwLDguNCw1LjUsMTUuNSwxMywxOGMxLDAuMiwxLjMtMC40LDEuMy0wLjljMC0wLjUsMC0xLjcsMC0zLjINCgljLTUuMywxLjEtNi40LTIuNi02LjQtMi42QzIwLDQxLjYsMTguOCw0MSwxOC44LDQxYy0xLjctMS4yLDAuMS0xLjEsMC4xLTEuMWMxLjksMC4xLDIuOSwyLDIuOSwyYzEuNywyLjksNC41LDIuMSw1LjUsMS42DQoJYzAuMi0xLjIsMC43LTIuMSwxLjItMi42Yy00LjItMC41LTguNy0yLjEtOC43LTkuNGMwLTIuMSwwLjctMy43LDItNS4xYy0wLjItMC41LTAuOC0yLjQsMC4yLTVjMCwwLDEuNi0wLjUsNS4yLDINCgljMS41LTAuNCwzLjEtMC43LDQuOC0wLjdjMS42LDAsMy4zLDAuMiw0LjcsMC43YzMuNi0yLjQsNS4yLTIsNS4yLTJjMSwyLjYsMC40LDQuNiwwLjIsNWMxLjIsMS4zLDIsMywyLDUuMWMwLDcuMy00LjUsOC45LTguNyw5LjQNCgljMC43LDAuNiwxLjMsMS43LDEuMywzLjVjMCwyLjYsMCw0LjYsMCw1LjJjMCwwLjUsMC40LDEuMSwxLjMsMC45YzcuNS0yLjYsMTMtOS43LDEzLTE4LjFDNTEsMjEuOSw0Mi41LDEzLjQsMzIsMTMuNHoiLz4NCjwvc3ZnPg0K);
   background-size: contain;
 }
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
 </style>
-

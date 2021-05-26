@@ -32,12 +32,8 @@ export default {
     };
   },
   props: {
-    apt: Object,
-<<<<<<< HEAD
-=======
+    apt: Object
   },
-  
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
   methods: {
     ...mapActions(['selectApt']),
     
@@ -67,10 +63,7 @@ export default {
     },
   },
 }
-<<<<<<< HEAD
-}
-=======
->>>>>>> 46170109b6909564f35286cf5f689bb32fb233cc
+
 </script>
 
 <style scoped>
