@@ -1,13 +1,21 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
-import Header from "../layout/starter/StarterHeader";
-import Footer from "../layout/starter/StarterFooter";
+// import Header from "../layout/starter/StarterHeader";
+// import Footer from "../layout/starter/StarterFooter";
 import Search from "../views/Search.vue";
 import Board from "../views/Board.vue";
+//jisoo
+import AppHeader from "../layout/AppHeader";
+import AppFooter from "../layout/AppFooter";
+//
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+
+// main
+
 import MyPage from "../views/MyPage.vue";
+
 
 Vue.use(Router);
 
@@ -19,8 +27,12 @@ export default new Router({
       path: "/",
       name: "Home",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Home,
+// jisoo
+        footer: AppFooter
+      },
+//
         footer: Footer
       },
     },
@@ -41,6 +53,7 @@ export default new Router({
         default: Register,
         footer: Footer
       }
+// main
     },
     {
       path: "/mypage",
@@ -55,18 +68,18 @@ export default new Router({
       path: "/search",
       name: "search",
       components: {
-        header: Header,
+        //header: Header,
         default: Search,
-        footer: Footer
+        //  footer: Footer
       },
     },
     {
       path: "/board",
       name: "board",
       components: {
-        header: Header,
+        header: AppHeader,
         default: Board,
-        footer: Footer
+        footer: AppFooter
       },
       children: [
         {
@@ -92,6 +105,41 @@ export default new Router({
       ],
       redirect: () => {
         return "/board";
+      }
+    },
+    {
+      path: "/faq",
+      name: "faq",
+      components: {
+        header: AppHeader,
+        default: Board,
+        footer: AppFooter
+      },
+      children: [
+        {
+          path: "",
+          name: "faq-list",
+          component: () => import("@/components/board/FaqList.vue")
+        },
+        {
+          path: "create",
+          name: "faq-create",
+          component: () => import("@/components/board/BoardCreate.vue")
+        },
+        {
+          path: "view",
+          name: "faq-view",
+          component: () => import("@/components/board/FaqView.vue")
+        },
+        {
+          path: "modify/:no",
+          name: "faq-modify",
+          component: () => import("@/components/board/BoardModify.vue")
+        },
+
+      ],
+      redirect: () => {
+        return "/faq";
       }
     },
     // { -------------------------- search detail

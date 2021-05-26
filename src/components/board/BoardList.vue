@@ -90,6 +90,18 @@ import ListRow from "@/components/board/include/ListRow.vue";
 //import moment from "moment";
 
 export default {
+
+  name: "boardList",
+  components: {
+    ListRow,
+    // BoardCreate,
+  },
+  data() {
+    return {
+      write_type: this.write_type,
+    };
+  },
+
    name: "boardlist",
 //   props: {
 //     no: Number,
@@ -101,6 +113,7 @@ export default {
 components:{
     ListRow
 },
+
   computed: {
     ...mapGetters(["boards"]),
   },
