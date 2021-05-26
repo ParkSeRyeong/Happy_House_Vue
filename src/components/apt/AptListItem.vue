@@ -1,15 +1,24 @@
 <template>
-  <b-row
+  <!-- <b-row
     class="m-2"
     @click="chooseApt"
     @mouseover="colorChange(true)"
     @mouseout="colorChange(false)"
     :class="{ 'mouse-over-bgcolor': isColor }"
   >
-    <b-col cols="2" class="text-center">
-    </b-col>
-    <b-col cols="10"> [{{ this.apt.aptName }}] {{ this.apt.buildYear }}</b-col>
-  </b-row>
+    <b-col> [{{ this.apt.aptName }}]</b-col>
+    <b-col> {{ this.apt.buildYear }}</b-col>
+  </b-row> -->
+  <tr class="m-2" 
+    @click="chooseApt"
+    @mouseover="colorChange(true)"
+    @mouseout="colorChange(false)"
+    :class="{ 'mouse-over-bgcolor': isColor }"
+    >
+
+    <td>{{this.apt.aptName}}</td>
+    <td>{{this.apt.buildYear}}</td>
+  </tr>
 </template>
 
 <script>
@@ -24,7 +33,6 @@ export default {
   },
   props: {
     apt: Object,
-  },
   methods: {
     // chooseApt() {
     //   // this.$emit('select-apt', this.apt);
@@ -32,13 +40,15 @@ export default {
     // },
     ...mapActions(['selectApt']),
     chooseApt() {
+      alert("클릭!");
       this.selectApt(this.apt);
     },
     colorChange(flag) {
       this.isColor = flag;
     },
   },
-};
+}
+}
 </script>
 
 <style scoped>

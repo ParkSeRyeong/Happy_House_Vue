@@ -2,16 +2,15 @@
   <section>
     <div
       class="hero-wrap"
-      style="background-image: url('images/bg_1.jpg')"
-      data-stellar-background-ratio="0.5"
+     
     >
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center">
-          <div class="col-lg-7 col-md-6 ftco-animate d-flex align-items-end">
+          <div class="col-lg-7 col-md-6 d-flex align-items-end">
             <div class="text">
-              <h1 class="mb-4">Find Perfect <br />우리집찾기프로젝트</h1>
-              <!-- <p style="font-size: 18px;"></p> -->
+              <h1 class="mb-4">Find Perfect <br/>우리집찾기프로젝트</h1>
+              <router-link to="/Search" style="color: white">SEARCH!!</router-link>
               <p>
                 <a
                   href="${root }/map/housemap"
@@ -211,5 +210,7 @@ export default {
   },
 };
 </script>
+
 <style>
+/* @import url("../assets/happyhousecss/style.css"); */
 </style>

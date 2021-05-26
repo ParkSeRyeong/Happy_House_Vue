@@ -9,6 +9,7 @@ import Board from "../views/Board.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -23,9 +24,9 @@ export default new Router({
       path: "/search",
       name: "search",
       components: {
-        //header: Header,
+       header: Header,
         default: Search,
-        //  footer: Footer
+        footer: Footer
       },
     },
 

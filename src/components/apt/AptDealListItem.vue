@@ -1,9 +1,8 @@
 <template>
-  <b-row class="m-2">
-    <b-col cols="2" class="text-center">
-    </b-col>
-    <b-col cols="10"> [{{ this.aptdeal.aptName }}] [{{ this.aptdeal.dealAmount }}] [{{this.aptdeal.lng}}] </b-col>
-  </b-row>
+   <tr class="m-2" >
+    <td>{{ this.aptdeal.aptName }}</td>
+    <td>{{ this.aptdeal.dealAmount }}</td>
+  </tr>
 </template>
 
 <script>
