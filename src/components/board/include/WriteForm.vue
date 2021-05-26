@@ -18,7 +18,7 @@
     </div> -->
 
     <div class="regist_form">
-      <label for="title"><h3>제목</h3></label>
+      <label for="title" class="fontToWhite"><h3>제목</h3></label>
       <input
         class="form-control"
         v-if="type == 'create'"
@@ -39,7 +39,7 @@
         ref="title"
         readonly
       /><br />
-      <label for="content"><h3>내용</h3></label><br />
+      <label for="content" class="fontToWhite"><h3>내용</h3></label><br />
       <textarea
         class="form-control"
         type="text"
