@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Element from 'element-ui';
 
 
-
 Vue.config.productionTip = false;
 Vue.use(Argon);
 Vue.use(BootstrapVue)
