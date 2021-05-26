@@ -149,7 +149,6 @@ export default new Vuex.Store({
           alert("에러발생!");
         });
     },
-
     getBoard(context, payload) {
       axios.get("/board/" + payload).then(({ data }) => {
         context.commit("setBoard", data);
