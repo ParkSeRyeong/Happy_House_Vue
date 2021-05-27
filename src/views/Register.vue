@@ -225,11 +225,10 @@ export default {
       }).open();
     },
     checkValue() {
-      alert("dfdfd");
       // 사용자 입력값 체크하기
       let err = true;
       let msg = "";
-<<<<<<< Updated upstream
+
       !this.name && ((msg = "이름을 입력해주세요"), (err = false)),
         err && !this.id && ((msg = "아이디를 입력해주세요"), (err = false)),
         err && !this.pw && ((msg = "비밀번호를 입력해주세요"), (err = false)),
@@ -238,38 +237,6 @@ export default {
         err && !this.postcode && ((msg = "주소를 확인해주세요"), (err = false)),
         err && !this.extraAddress && ((msg = "주소를 확인해주세요"), (err = false)),
         err && !this.agree && ((msg = "정책에 동의해주세요"), (err = false));
-=======
-      !this.name &&
-        ((msg = "이름을 입력해주세요"), (err = false), this.$refs.name.focus());
-      err &&
-        !this.id &&
-        ((msg = "아이디를 입력해주세요"), (err = false), this.$refs.id.focus());
-      err &&
-        !this.pw &&
-        ((msg = "비밀번호를 입력해주세요"),
-        (err = false),
-        this.$refs.pw.focus());
-      err &&
-        !this.phone &&
-        ((msg = "전화번호를 입력해주세요"),
-        (err = false),
-        this.$refs.phone.focus());
-      err &&
-        !this.email &&
-        ((msg = "E-mail을 입력해주세요"),
-        (err = false),
-        this.$refs.email.focus());
-      err &&
-        !this.postcode &&
-        ((msg = "주소를 확인해주세요"),
-        (err = false),
-        this.$refs.postcode.focus());
-      err &&
-        !this.extraAddress &&
-        ((msg = "주소를 확인해주세요"),
-        (err = false),
-        this.$refs.extraAddress.focus());
->>>>>>> Stashed changes
 
       if (!err) alert(msg);
       // 만약, 내용이 다 입력되어 있다면 registBoard 호출

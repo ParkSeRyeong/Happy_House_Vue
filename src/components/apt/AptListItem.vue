@@ -38,7 +38,6 @@ export default {
     ...mapActions(['selectApt']),
     
     chooseApt() {
-      alert("클릭!");
       this.selectApt(this.apt);
 
       /* global kakao */

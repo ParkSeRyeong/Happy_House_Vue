@@ -19,9 +19,11 @@
         <th>날짜</th>
         <td>{{ getFormatDate(faq.regtime) }}</td>
       </tr>
-      <tr>
-        <th>내용</th>
-        <td>{{ faq.content }}</td>
+        <tr height="30px">
+        <th colspan="2">내용</th>
+      </tr>
+      <tr class="mt-5">
+        <td colspan="2">{{ faq.content }}</td>
       </tr>
     </table>
 

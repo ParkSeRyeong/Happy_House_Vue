@@ -21,8 +21,10 @@
         <td>{{ getFormatDate(board.regtime) }}</td>
       </tr>
       <tr height="30px">
-        <th>내용</th>
-        <td>{{ board.content }}</td>
+        <th colspan="2">내용</th>
+      </tr>
+      <tr class="mt-5">
+        <td colspan="2">{{ board.content }}</td>
       </tr>
     </table>
 

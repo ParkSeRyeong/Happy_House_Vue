@@ -39,7 +39,6 @@
       </ul>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-<<<<<<< Updated upstream
         <div class="navbar-nav ml-auto" v-if="!isLogin">
           <li class="nav-item">
             <a href="/register" class="nav-link"> Sign Up </a>
@@ -59,18 +58,7 @@
             <a href="" class="nav-link" @click="logout"> LogOut </a>
           </li>
         </div>
-=======
-        <li class="nav-item">
-          <router-link to="/login" class="dropdown-item">
-            <i class="fa fa-user"> Login</i>
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/register" class="dropdown-item">
-            <i class="fa fa-user-plus"> Sign up</i>
-          </router-link>
-        </li>
->>>>>>> Stashed changes
+
         <li class="nav-item d-none d-lg-block ml-lg-4">
           <a
             href="https://github.com/ParkSeRyeong/Happy_House.git"
@@ -92,7 +80,7 @@
 import BaseNav from "@/components/BaseNav";
 import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
-import { mapState, mapActions } from "vuex";
+import { mapState} from "vuex";
 
 export default {
   data() {
@@ -107,7 +95,10 @@ export default {
     BaseDropdown,
   },
   methods: {
-    ...mapActions(["logout"]),
+   logout() {
+      this.$store.dispatch("logout");
+      this.$router.push("../");
+    },
   },
 };
 </script>

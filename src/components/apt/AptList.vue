@@ -22,7 +22,11 @@
   </b-container>
   <b-container v-else class="bv-example-row mt-3">
     <b-row>
-      <b-col><b-alert show>아파트 목록이 없습니다.</b-alert></b-col>
+      <sequential-entrance>
+        <div class="box centerize tcenter">
+          아파트 목록이 없습니다.
+        </div>
+      </sequential-entrance>
     </b-row>
     
   </b-container>
@@ -50,4 +54,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.box {
+  border-radius: 10px;
+  background-color: rgb(187, 197, 230);
+  color:black;
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+}
+</style>
