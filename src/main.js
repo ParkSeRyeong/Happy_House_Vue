@@ -7,23 +7,20 @@ import './registerServiceWorker'
 
 // jisoo
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import 'bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueParticles from 'vue-particles';
-// import VueFullPage from 'vue-fullpage.js'
-// import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverflow:true
-// import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
 
+import SequentialEntrance from 'vue-sequential-entrance';
+import 'vue-sequential-entrance/vue-sequential-entrance.css';
+Vue.use(SequentialEntrance);
 Vue.use(VueParticles);
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-//import Element from 'element-ui';
 
-// main
 Vue.config.productionTip = false;
 Vue.use(Argon);
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);     
 Vue.use(BootstrapVue);
 
 

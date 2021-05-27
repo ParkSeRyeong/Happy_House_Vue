@@ -11,12 +11,23 @@
     <apt-Deal-list-item v-for="(aptdeal, index) in apt" :key="index" :aptdeal="aptdeal" />
      </tbody>
     </table> -->
-    <div class="box bgwhite aptBox">으아아앙아</div>
-    <apt-deal-list-item/>
+    <b-row>
+      <h4 class="centerize">아파트 상세 정보</h4><hr>
+      <!-- <sequential-entrance>
+        <div class="box centerize"> -->
+           <apt-Deal-list-item v-for="(aptdeal, index) in apt" :key="index" :aptdeal="aptdeal" />
+        <!-- </div>
+      </sequential-entrance> -->
+      
+    </b-row>
   </b-container>
   <b-container v-else class="bv-example-row mt-3">
     <b-row>
-      <b-col><b-alert show>아파트 목록이 없습니다.</b-alert></b-col>
+       <sequential-entrance>
+        <div class="box centerize">
+          아파트 목록이 없습니다.
+        </div>
+      </sequential-entrance>
     </b-row>
   </b-container>
 </template>
@@ -24,24 +35,33 @@
 <script>
 import { mapState } from 'vuex';
 import AptDealListItem from './AptDealListItem.vue';
+import SequentialEntrance from 'vue-sequential-entrance';
 
 export default {
   name: 'AptDetail',
-  data(){
-    return{
-      
-    };
+  data() {
+    return {};
   },
-  created:{
-    apt:[],
+  created: {
+    apt: [],
   },
   computed: {
     ...mapState(['apt']),
   },
   components: {
-    AptDealListItem
-  }
+    AptDealListItem,
+    SequentialEntrance
+  },
 };
 </script>
 
-<style></style>
+<style>
+.box {
+  /* border-radius: 10px; */
+  background-color: rgb(220, 240, 243);
+  color:black;
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+}
+</style>

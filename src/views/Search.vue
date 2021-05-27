@@ -5,6 +5,7 @@
       <b-row>
         <div class="col-md-12 pb-0 text-center">
           <h1 class="mb-4">주택 거래가검색하기</h1>
+             <Roller class="fontToDark" text="Happy House"></Roller>
         </div>
       </b-row>
       <hr/>
@@ -29,6 +30,8 @@
 import AptSearchBar from '@/components/apt/AptSearchBar.vue';
 import AptList from '@/components/apt/AptList.vue';
 import AptDetail from '@/components/apt/AptDetail.vue';
+import Roller from "vue-roller";
+
 export default {
   name: 'Apt',
   data() {
@@ -40,6 +43,7 @@ export default {
     AptSearchBar,
     AptList,
     AptDetail,
+    Roller
   },
   mounted() {
     if (window.kakao && window.kakao.maps) {

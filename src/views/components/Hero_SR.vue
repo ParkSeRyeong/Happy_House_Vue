@@ -4,7 +4,7 @@
       <section class="wrap-banner">
         <div id="mainPage" data-stellar-background-ratio="0.5">
           <div class="main-title">
-             <Roller text="Happy House"></Roller>
+            <Roller text="Happy House"/>
             <!-- <vue-hacker-text class="hacker-text" text="Find our home" /> -->
             <h2 hidden="true">Find our home</h2>
             <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
@@ -39,20 +39,22 @@
             clickMode="push"
           >
           </vue-particles>
-        </div>  
+        </div>
+
       </section>
     </div>
+
   </vue-scroll-snap>
 </template>
 
 <script >
 import BaseButton from "../../components/BaseButton.vue";
-//import VueHackerText from "vue-hacker-text";
+import VueHackerText from "vue-hacker-text";
 import VueScrollSnap from "vue-scroll-snap";
 import Roller from "vue-roller";
 
 export default {
-  components: { BaseButton,  VueScrollSnap,Roller },
+  components: { BaseButton, VueHackerText, VueScrollSnap, Roller },
   name: "",
   data() {
     return {
