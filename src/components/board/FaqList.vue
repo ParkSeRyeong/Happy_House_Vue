@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1 class="underline">자주하는 질문</h1>
+  <div class="container text-center">
+    <h1 class="underline container">자주하는 질문</h1>
     <div class="text-right">
-      <button class="btn btn-primary" @click="movePage">
-        1:1 질문 등록하기
-      </button>
+      <br />
+      <base-button type="info" @click="movePage">1:1 질문 등록하기</base-button>
     </div>
-    <div v-if="faqs.length">
+    <br />
+    <div v-if="faqs.length" class="container">
       <table class="table table-bordered table-condensed">
         <colgroup>
           <col :style="{ width: '5%' }" />
@@ -59,5 +59,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

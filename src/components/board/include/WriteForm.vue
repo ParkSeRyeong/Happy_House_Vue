@@ -5,20 +5,9 @@
       <template v-if="type == 'create'">등록</template>
       <template v-else>수정</template>
     </h2>
-    <!-- <div class="form-group">
-      <label for="writer">작성자</label>
-      <input
-        type="text"
-        class="form-control"
-        id="writer"
-        ref="writer"
-        placeholder="작성자를 입력하세요."
-        v-model="writer"
-      />
-    </div> -->
-
-    <div class="regist_form">
-      <label for="title">제목</label>
+    <br/>
+    <div class="regist_form container">
+      <label for="title"><h4>제목</h4></label><br/>
       <input
         class="form-control"
         v-if="type == 'create'"
@@ -30,6 +19,7 @@
         placeholder="제목을 입력하세요."
       />
       <input
+        class="form-control"
         v-else
         type="text"
         id="title"
@@ -38,7 +28,7 @@
         ref="title"
         readonly
       /><br />
-      <label for="content">내용</label><br />
+      <label for="content"><h4>내용</h4></label><br />
       <textarea
         class="form-control"
         type="text"
@@ -50,8 +40,8 @@
         placeholder="내용을 입력하세요."
       ></textarea
       ><br />
-      <div>
         <input
+          class="mr-1"
           type="radio"
           id="write_type"
           v-model="write_type"
@@ -60,16 +50,18 @@
           checked="checked"
         />공지사항
         <input
+          class="mr-1"
           type="radio"
           id="write_type"
           v-model="write_type"
           name="write_type"
           value="faq"
         />FAQ
-      </div>
-      <button v-if="type == 'create'" @click="checkValue">등록</button>
-      <button v-else @click="checkValue">수정</button>
-      <button @click="moveList">목록</button>
+      <br/>
+      <base-button v-if="type == 'create'" class="btn mr-1" type="info" @click="checkValue">등록</base-button>
+      <base-button v-else class="btn mr-1" type="info" @click="checkValue">수정</base-button>
+      <base-button class="btn mr-1" type="info" @click="moveList">목록</base-button>
+  
     </div>
 
     <!-- <div class="form-group">

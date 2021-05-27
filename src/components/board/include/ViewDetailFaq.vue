@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <table class="table table-bordered w-50">
+  <div class="text-center container">
+      <h2 class="underline">FAQ</h2>
+     <br/>
+    <table class="table table-striped">
       <tr>
         <th>번호</th>
         <td>{{ faq.no }}</td>
@@ -18,17 +20,17 @@
         <td>{{ getFormatDate(faq.regtime) }}</td>
       </tr>
       <tr>
-        <td colspan="2">
-          {{ faq.content }}
-        </td>
+        <th>내용</th>
+        <td>{{ faq.content }}</td>
       </tr>
     </table>
 
     <br />
+    <br />
     <div class="text-center">
-      <router-link to="/faq" class="btn">목록</router-link>
-      <router-link :to="`/faq/modify/${faq.no}`" class="btn">수정</router-link>
-      <a href="#" class="btn" @click="deleteFaq">삭제</a>
+      <router-link to="/faq" class="btn" type="info">목록</router-link>
+      <router-link :to="`/faq/modify/${faq.no}`" class="btn" type="info">수정</router-link>
+      <a href="#" class="btn" type="info" @click="deleteBoard">삭제</a>
     </div>
   </div>
 </template>
