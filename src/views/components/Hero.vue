@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
 // jisoo
   <section class="wrap-banner">
     <div id="mainPage" data-stellar-background-ratio="0.5">
@@ -39,12 +40,67 @@
               </p>
             </div>
           </div>
+=======
+  <vue-scroll-snap :fullscreen="true">
+    <div class="item first">
+      <Roller text="1234"></Roller>
+      <section class="wrap-banner">
+        <div id="mainPage" data-stellar-background-ratio="0.5">
+          <div class="main-title">
+            <!-- <Roller text="Happy House"></Roller> -->
+            <vue-hacker-text class="hacker-text" text="Find our home" />
+            <h2 hidden="true">Find our home</h2>
+            <p class="subtitle">우 리 집 찾 기 프 로 젝 트</p>
+            <br />
+            <router-link to="/search"
+              ><base-button
+                class="findBtn"
+                outline
+                type="secondary"
+                icon="fa fa-search"
+                size="lg"
+                >매물 찾기</base-button
+              ></router-link
+            >
+          </div>
+          <vue-particles
+            class="particles-js"
+            color="#000000"
+            :particleOpacity="0.7"
+            linesColor="#000000"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="5"
+            :linesWidth="2"
+            :lineLinked="true"
+            :lineOpacity="0.4"
+            :linesDistance="150"
+            :moveSpeed="3"
+            :hoverEffect="true"
+            hoverMode="grab"
+            :clickEffect="true"
+            clickMode="push"
+          >
+          </vue-particles>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
 
+<<<<<<< Updated upstream
     <div class="ftco-section ftco-no-pb ftco-no-pt search-bg">
       <div class="container">
+=======
+    <div class="item second">
+      <section>
+        <div class="wrap-banner">
+          <div id="mainPage" data-stellar-background-ratio="0.5">
+            <div class="main-title">
+              <vue-typer text="사 용 한 언 어" class="lan"></vue-typer>
+            </div>
+          </div>
+        </div>
+>>>>>>> Stashed changes
         <div class="row">
           <div class="col-md-12">
             <div class="search-wrap-1 ftco-animate p-4">

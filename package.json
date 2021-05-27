@@ -18,7 +18,13 @@
     "moment": "^2.29.1",
     "node-sass": "^4.14.1 ",
     "nouislider": "^15.1.0",
+    "particles.vue": "^2.10.0",
     "register-service-worker": "^1.7.2",
+<<<<<<< Updated upstream
+=======
+    "swing": "^3.1.4",
+    "tsparticles": "^1.27.0",
+>>>>>>> Stashed changes
     "vue": "^2.6.12",
 // jisoo
     "vue-fullpage.js": "^0.1.7",

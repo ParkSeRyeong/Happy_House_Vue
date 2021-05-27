@@ -5,6 +5,7 @@
       <template v-if="type == 'create'">등록</template>
       <template v-else>수정</template>
     </h2>
+<<<<<<< Updated upstream
     <!-- <div class="form-group">
       <label for="writer">작성자</label>
       <input
@@ -19,6 +20,11 @@
 
     <div class="regist_form">
       <label for="title">제목</label>
+=======
+    <br />
+    <div class="regist_form container">
+      <label for="title"><h4>제목</h4></label><br />
+>>>>>>> Stashed changes
       <input
         class="form-control"
         v-if="type == 'create'"
@@ -50,6 +56,7 @@
         placeholder="내용을 입력하세요."
       ></textarea
       ><br />
+<<<<<<< Updated upstream
       <div>
         <input
           type="radio"
@@ -70,6 +77,39 @@
       <button v-if="type == 'create'" @click="checkValue">등록</button>
       <button v-else @click="checkValue">수정</button>
       <button @click="moveList">목록</button>
+=======
+      <input
+        class="mr-1"
+        type="radio"
+        id="write_type"
+        v-model="write_type"
+        name="write_type"
+        value="notice"
+        checked="checked"
+      />공지사항
+      <input
+        class="mr-1"
+        type="radio"
+        id="write_type"
+        v-model="write_type"
+        name="write_type"
+        value="faq"
+      />FAQ
+      <br />
+      <base-button
+        v-if="type == 'create'"
+        class="btn mr-1"
+        type="info"
+        @click="checkValue"
+        >등록</base-button
+      >
+      <base-button v-else class="btn mr-1" type="info" @click="checkValue"
+        >수정</base-button
+      >
+      <base-button class="btn mr-1" type="info" @click="moveList"
+        >목록</base-button
+      >
+>>>>>>> Stashed changes
     </div>
 
     <!-- <div class="form-group">
@@ -107,7 +147,6 @@
 //import {mapGetters} from 'vuex';
 // import moment from "moment";
 import axios from "@/util/http-common";
-
 export default {
   name: "WriteForm",
   props: {

@@ -1,6 +1,13 @@
 <template>
+<<<<<<< Updated upstream
   <div>
     <table class="table table-bordered w-50">
+=======
+  <div class="text-center container">
+    <h2 class="underline">FAQ</h2>
+    <br />
+    <table class="table table-striped">
+>>>>>>> Stashed changes
       <tr>
         <th>번호</th>
         <td>{{ faq.no }}</td>
@@ -17,18 +24,34 @@
         <th>날짜</th>
         <td>{{ getFormatDate(faq.regtime) }}</td>
       </tr>
+<<<<<<< Updated upstream
       <tr>
         <td colspan="2">
           {{ faq.content }}
         </td>
+=======
+      <tr height="30px">
+        <th colspan="2">내용</th>
+      </tr>
+      <tr class="mt-5">
+        <td colspan="2">{{ faq.content }}</td>
+>>>>>>> Stashed changes
       </tr>
     </table>
 
     <br />
     <div class="text-center">
+<<<<<<< Updated upstream
       <router-link to="/faq" class="btn">목록</router-link>
       <router-link :to="`/faq/modify/${faq.no}`" class="btn">수정</router-link>
       <a href="#" class="btn" @click="deleteFaq">삭제</a>
+=======
+      <router-link to="/faq" class="btn" type="info">목록</router-link>
+      <router-link :to="`/faq/modify/${faq.no}`" class="btn" type="info"
+        >수정</router-link
+      >
+      <a href="#" class="btn" type="info" @click="deleteFaq">삭제</a>
+>>>>>>> Stashed changes
     </div>
   </div>
 </template>
@@ -77,6 +100,7 @@ export default {
   },
 };
 </script >
+
 <style scoped>
 .regist {
   padding: 10px;

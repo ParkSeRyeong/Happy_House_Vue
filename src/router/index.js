@@ -27,10 +27,15 @@ export default new Router({
         default: Home,
 // jisoo
         footer: AppFooter
+<<<<<<< Updated upstream
       },
 //
         footer: Footer
       },
+=======
+      }
+
+>>>>>>> Stashed changes
     },
     {
       path: "/login",
@@ -47,9 +52,33 @@ export default new Router({
       components: {
         header: Header,
         default: Register,
+<<<<<<< Updated upstream
         footer: Footer
       }
 // main
+=======
+        footer: AppFooter,
+      },
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      components: {
+        header: AppHeader,
+        default: Profile,
+        footer: AppFooter,
+      },
+    },
+    {
+      path: "/modify",
+      name: "modify",
+      components: {
+        header: AppHeader,
+        default: Modify,
+        footer: AppFooter,
+      },
+
+>>>>>>> Stashed changes
     },
     {
       path: "/search",

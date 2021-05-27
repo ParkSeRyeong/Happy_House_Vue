@@ -47,11 +47,19 @@
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">MyArea</span>
           </a>
+<<<<<<< Updated upstream
           <router-link to="/landing" class="dropdown-item">Landing</router-link>
           <router-link to="/profile" class="dropdown-item">Profile</router-link>
           <router-link to="/login" class="dropdown-item">Login</router-link>
           <router-link to="/register" class="dropdown-item"
             >Register</router-link
+=======
+          <router-link to="/myarea" class="dropdown-item"
+            >우리 지역 둘러보기</router-link
+          >
+          <router-link to="/myarea" class="dropdown-item"
+            >우리 지역 게시판</router-link
+>>>>>>> Stashed changes
           >
         </base-dropdown>
       </ul>
