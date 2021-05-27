@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <table class="table table-bordered w-50">
+  <div class="text-center container">
+     <h2 class="underline">공지사항</h2>
+     <br/>
+      <br/>
+    <table class="table table-striped">
       <tr>
         <th>번호</th>
         <td>{{ board.no }}</td>
@@ -17,20 +20,20 @@
         <th>날짜</th>
         <td>{{ getFormatDate(board.regtime) }}</td>
       </tr>
-      <tr>
-        <td colspan="2">
-          {{ board.content }}
-        </td>
+      <tr height="30px">
+        <th colspan="2">내용</th>
+      </tr>
+      <tr class="mt-5">
+        <td colspan="2">{{ board.content }}</td>
       </tr>
     </table>
 
     <br />
+    <br />
     <div class="text-center">
-      <router-link to="/board" class="btn">목록</router-link>
-      <router-link :to="`/board/modify/${board.no}`" class="btn"
-        >수정</router-link
-      >
-      <a href="#" class="btn" @click="deleteBoard">삭제</a>
+      <router-link to="/board" class="btn" type="info">목록</router-link>
+      <router-link :to="`/board/modify/${board.no}`" class="btn" type="info">수정</router-link>
+      <a href="#" class="btn" type="info" @click="deleteBoard">삭제</a>
     </div>
   </div>
 </template>
@@ -78,7 +81,7 @@ export default {
     },
   },
 };
-</script >
+</script>
 <style scoped>
 .regist {
   padding: 10px;

@@ -41,6 +41,7 @@
                   class="mb-3"
                   placeholder="Name"
                   addon-left-icon="ni ni-hat-3"
+                  ref="name"
                   v-model="name"
                 >
                 </base-input>
@@ -50,6 +51,7 @@
                   placeholder="ID"
                   addon-left-icon="ni ni-email-83"
                   v-model="id"
+                  ref="id"
                 >
                 </base-input>
                 <base-input
@@ -58,6 +60,7 @@
                   placeholder="Password"
                   addon-left-icon="ni ni-lock-circle-open"
                   v-model="pw"
+                  ref="pw"
                 >
                 </base-input>
                 <base-input
@@ -65,6 +68,7 @@
                   placeholder="Phone"
                   addon-left-icon="ni ni-lock-circle-open"
                   v-model="phone"
+                  ref="phone"
                 >
                 </base-input>
                 <base-input
@@ -72,18 +76,30 @@
                   placeholder="Email"
                   addon-left-icon="ni ni-lock-circle-open"
                   v-model="email"
+                  ref="email"
                 >
                 </base-input>
                 <div>
                   <div
                     ref="searchWindow"
                     :style="searchWindow"
-                    style="border: 1px solid; width: 500px; margin: 5px 0; position: relative"
+                    style="
+                      border: 1px solid;
+                      width: 500px;
+                      margin: 5px 0;
+                      position: relative;
+                    "
                   >
                     <img
                       src="//t1.daumcdn.net/postcode/resource/images/close.png"
                       id="btnFoldWrap"
-                      style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1"
+                      style="
+                        cursor: pointer;
+                        position: absolute;
+                        right: 0px;
+                        top: -1px;
+                        z-index: 1;
+                      "
                       @click="searchWindow.display = 'none'"
                       alt="close"
                     />
@@ -95,10 +111,15 @@
                     placeholder="우편번호"
                     addon-left-icon="ni ni-email-83"
                     v-model="postcode"
+                    ref="postcode"
                   >
                   </base-input>
 
-                  <input type="button" value="우편번호 찾기" @click="execDaumPostcode" />
+                  <input
+                    type="button"
+                    value="우편번호 찾기"
+                    @click="execDaumPostcode"
+                  />
 
                   <base-input
                     alternative
@@ -106,6 +127,7 @@
                     placeholder="주소"
                     addon-left-icon="ni ni-email-83"
                     v-model="address"
+                    ref="address"
                   >
                   </base-input>
 
@@ -115,18 +137,19 @@
                     placeholder="상세주소"
                     addon-left-icon="ni ni-email-83"
                     v-model="extraAddress"
+                    ref="extraAddress"
                   >
                   </base-input>
                 </div>
 
-                <base-checkbox>
+                <base-checkbox id="agree" v-model="agree">
                   <span
                     >I agree with the
                     <a href="#">Privacy Policy</a>
                   </span>
                 </base-checkbox>
                 <div class="text-center">
-                  <base-button type="primary" class="my-4" @click="checkValue"
+                  <base-button type="primary" class="my-4" @click="checkValue()"
                     >Create account</base-button
                   >
                 </div>
@@ -161,7 +184,10 @@ export default {
   },
   methods: {
     execDaumPostcode() {
-      const currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      const currentScroll = Math.max(
+        document.body.scrollTop,
+        document.documentElement.scrollTop
+      );
       // eslint-disable-next-line
       new daum.Postcode({
         onComplete: (data) => {
@@ -176,7 +202,9 @@ export default {
             }
             if (data.buildingName !== "" && data.apartment === "Y") {
               this.extraAddress +=
-                this.extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+                this.extraAddress !== ""
+                  ? `, ${data.buildingName}`
+                  : data.buildingName;
             }
             if (this.extraAddress !== "") {
               this.extraAddress = ` (${this.extraAddress})`;
@@ -200,21 +228,15 @@ export default {
       // 사용자 입력값 체크하기
       let err = true;
       let msg = "";
-      !this.name && ((msg = "이름을 입력해주세요"), (err = false), this.$refs.name.focus());
-      err && !this.id && ((msg = "아이디를 입력해주세요"), (err = false), this.$refs.id.focus());
-      err && !this.pw && ((msg = "비밀번호를 입력해주세요"), (err = false), this.$refs.pw.focus());
-      err &&
-        !this.phone &&
-        ((msg = "전화번호를 입력해주세요"), (err = false), this.$refs.phone.focus());
-      err &&
-        !this.email &&
-        ((msg = "E-mail을 입력해주세요"), (err = false), this.$refs.email.focus());
-      err &&
-        !this.postcode &&
-        ((msg = "주소를 확인해주세요"), (err = false), this.$refs.postcode.focus());
-      err &&
-        !this.extraAddress &&
-        ((msg = "주소를 확인해주세요"), (err = false), this.$refs.extraAddress.focus());
+
+      !this.name && ((msg = "이름을 입력해주세요"), (err = false)),
+        err && !this.id && ((msg = "아이디를 입력해주세요"), (err = false)),
+        err && !this.pw && ((msg = "비밀번호를 입력해주세요"), (err = false)),
+        err && !this.phone && ((msg = "전화번호를 입력해주세요"), (err = false)),
+        err && !this.email && ((msg = "E-mail을 입력해주세요"), (err = false)),
+        err && !this.postcode && ((msg = "주소를 확인해주세요"), (err = false)),
+        err && !this.extraAddress && ((msg = "주소를 확인해주세요"), (err = false)),
+        err && !this.agree && ((msg = "정책에 동의해주세요"), (err = false));
 
       if (!err) alert(msg);
       // 만약, 내용이 다 입력되어 있다면 registBoard 호출
@@ -228,12 +250,9 @@ export default {
           pw: this.pw,
           phone: this.phone,
           email: this.email,
-          address_sido: this.address,
-          address_gugun: this.address,
-          address_dong: this.address,
-          interest_sido: this.address,
-          interest_gugun: this.address,
-          interest_dong: this.address,
+          postcode: this.postcode,
+          address: this.address,
+          extraAddress: this.extraAddress,
         })
         .then(({ data }) => {
           let msg = "등록 처리시 문제가 발생했습니다.";
