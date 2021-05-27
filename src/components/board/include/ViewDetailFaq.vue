@@ -1,7 +1,7 @@
 <template>
   <div class="text-center container">
-      <h2 class="underline">FAQ</h2>
-     <br/>
+    <h2 class="underline">FAQ</h2>
+    <br />
     <table class="table table-striped">
       <tr>
         <th>번호</th>
@@ -19,7 +19,7 @@
         <th>날짜</th>
         <td>{{ getFormatDate(faq.regtime) }}</td>
       </tr>
-        <tr height="30px">
+      <tr height="30px">
         <th colspan="2">내용</th>
       </tr>
       <tr class="mt-5">
@@ -31,8 +31,10 @@
     <br />
     <div class="text-center">
       <router-link to="/faq" class="btn" type="info">목록</router-link>
-      <router-link :to="`/faq/modify/${faq.no}`" class="btn" type="info">수정</router-link>
-      <a href="#" class="btn" type="info" @click="deleteBoard">삭제</a>
+      <router-link :to="`/faq/modify/${faq.no}`" class="btn" type="info"
+        >수정</router-link
+      >
+      <a href="#" class="btn" type="info" @click="deleteFaq">삭제</a>
     </div>
   </div>
 </template>
@@ -81,6 +83,7 @@ export default {
   },
 };
 </script >
+
 <style scoped>
 .regist {
   padding: 10px;

@@ -12,8 +12,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueTyperPlugin from 'vue-typer'
 import VueParticles from 'vue-particles';
 import Carousel3d from 'vue-carousel-3d';
-import SequentialEntrance from 'vue-sequential-entrance';
-import 'vue-sequential-entrance/vue-sequential-entrance.css';
+// import SequentialEntrance from 'vue-sequential-entrance';
+// import 'vue-sequential-entrance/vue-sequential-entrance.css';
 
 
 
@@ -23,7 +23,7 @@ import 'vue-sequential-entrance/vue-sequential-entrance.css';
 // ES6
 //import Element from 'element-ui';
 
-Vue.use(SequentialEntrance);
+// Vue.use(SequentialEntrance);
 Vue.use(VueParticles);
 Vue.use(Carousel3d);
 Vue.config.productionTip = false;

@@ -6,7 +6,9 @@
       </router-link>
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
-          <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
+          <a
+            href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
+          >
             <img src="../images_happy/logo.png" />
           </a>
         </div>
@@ -18,23 +20,39 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <router-link to="/" class="dropdown-item">Home</router-link>
         <base-dropdown tag="li" class="nav-item">
-          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
+          <a
+            slot="title"
+            href="#"
+            class="nav-link"
+            data-toggle="dropdown"
+            role="button"
+          >
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Notice</span>
           </a>
           <router-link to="/board" class="dropdown-item">공지사항</router-link>
           <router-link to="/faq" class="dropdown-item">FAQ</router-link>
-          <router-link to="/qna" class="dropdown-item">1:1 질문하기</router-link>
+          <router-link to="/qna" class="dropdown-item"
+            >1:1 질문하기</router-link
+          >
         </base-dropdown>
         <base-dropdown tag="li" class="nav-item">
-          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
+          <a
+            slot="title"
+            href="#"
+            class="nav-link"
+            data-toggle="dropdown"
+            role="button"
+          >
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">MyArea</span>
           </a>
-          <router-link to="/landing" class="dropdown-item">Landing</router-link>
-          <router-link to="/profile" class="dropdown-item">Profile</router-link>
-          <router-link to="/login" class="dropdown-item">Login</router-link>
-          <router-link to="/register" class="dropdown-item">Register</router-link>
+          <router-link to="/myarea" class="dropdown-item"
+            >우리 지역 둘러보기</router-link
+          >
+          <router-link to="/myarea" class="dropdown-item"
+            >우리 지역 게시판</router-link
+          >
         </base-dropdown>
       </ul>
 

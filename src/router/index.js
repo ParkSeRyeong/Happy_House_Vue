@@ -29,6 +29,7 @@ export default new Router({
         default: Home,
         footer: AppFooter
       }
+
     },
     {
       path: "/login",
@@ -65,6 +66,7 @@ export default new Router({
         default: Modify,
         footer: AppFooter,
       },
+
     },
     {
       path: "/search",
