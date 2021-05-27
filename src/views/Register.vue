@@ -1,15 +1,5 @@
 <template>
-  <section class="section section-shaped section-lg my-0">
-    <div class="shape shape-style-1 bg-gradient-default">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <section class="section section-shaped section-lg my-0 back">
     <div class="container pt-lg-md">
       <div class="row justify-content-center">
         <div class="col-lg-5">
@@ -21,14 +11,24 @@
             class="border-0"
           >
             <template>
-              <div class="text-muted text-center mb-3">
-                <small>Sign in with</small>
-              </div>
-              <div class="btn-wrapper text-center">
-                <base-button type="neutral">
-                  <img slot="icon" src="img/icons/common/github.svg" />
-                  Github
-                </base-button>
+              <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                  <vue-typer
+                    :text="'SIGN UP.....'"
+                    :repeat="Infinity"
+                    :shuffle="false"
+                    initial-action="typing"
+                    :pre-type-delay="70"
+                    :type-delay="70"
+                    :pre-erase-delay="2000"
+                    :erase-delay="250"
+                    erase-style="select-all"
+                    :erase-on-complete="false"
+                    caret-animation="blink"
+                  ></vue-typer>
+                </div>
+                <div class="col-1"></div>
               </div>
             </template>
             <template>
@@ -39,8 +39,8 @@
                 <base-input
                   alternative
                   class="mb-3"
-                  placeholder="Name"
-                  addon-left-icon="ni ni-hat-3"
+                  placeholder=" Name"
+                  addon-left-icon="fa fa-user"
                   ref="name"
                   v-model="name"
                 >
@@ -48,8 +48,8 @@
                 <base-input
                   alternative
                   class="mb-3"
-                  placeholder="ID"
-                  addon-left-icon="ni ni-email-83"
+                  placeholder=" ID"
+                  addon-left-icon="fa fa-id-card-o"
                   v-model="id"
                   ref="id"
                 >
@@ -57,7 +57,7 @@
                 <base-input
                   alternative
                   type="password"
-                  placeholder="Password"
+                  placeholder=" Password"
                   addon-left-icon="ni ni-lock-circle-open"
                   v-model="pw"
                   ref="pw"
@@ -65,16 +65,16 @@
                 </base-input>
                 <base-input
                   alternative
-                  placeholder="Phone"
-                  addon-left-icon="ni ni-lock-circle-open"
+                  placeholder=" Phone"
+                  addon-left-icon="fa fa-phone"
                   v-model="phone"
                   ref="phone"
                 >
                 </base-input>
                 <base-input
                   alternative
-                  placeholder="Email"
-                  addon-left-icon="ni ni-lock-circle-open"
+                  placeholder=" Email"
+                  addon-left-icon="fa fa-envelope"
                   v-model="email"
                   ref="email"
                 >
@@ -104,28 +104,31 @@
                       alt="close"
                     />
                   </div>
-
-                  <base-input
-                    alternative
-                    class="mb-2"
-                    placeholder="우편번호"
-                    addon-left-icon="ni ni-email-83"
-                    v-model="postcode"
-                    ref="postcode"
-                  >
-                  </base-input>
-
-                  <input
-                    type="button"
-                    value="우편번호 찾기"
-                    @click="execDaumPostcode"
-                  />
-
+                  <div class="row">
+                    <div class="col-8">
+                      <base-input
+                        alternative
+                        class="mb-2"
+                        placeholder=" 우편번호"
+                        addon-left-icon="fa fa-location-arrow"
+                        v-model="postcode"
+                        ref="postcode"
+                      >
+                      </base-input>
+                    </div>
+                    <div class="col-4">
+                      <base-input
+                        type="button"
+                        value="우편번호 찾기"
+                        @click="execDaumPostcode"
+                      />
+                    </div>
+                  </div>
                   <base-input
                     alternative
                     class="mb-3"
-                    placeholder="주소"
-                    addon-left-icon="ni ni-email-83"
+                    placeholder=" 주소"
+                    addon-left-icon="fa fa-map-marker"
                     v-model="address"
                     ref="address"
                   >
@@ -134,8 +137,8 @@
                   <base-input
                     alternative
                     class="mb-3"
-                    placeholder="상세주소"
-                    addon-left-icon="ni ni-email-83"
+                    placeholder=" 상세주소를 입력해주세요"
+                    addon-left-icon="fa fa-map-marker"
                     v-model="extraAddress"
                     ref="extraAddress"
                   >
@@ -149,7 +152,11 @@
                   </span>
                 </base-checkbox>
                 <div class="text-center">
-                  <base-button type="primary" class="my-4" @click="checkValue()"
+                  <base-button
+                    type="default"
+                    class="my-4"
+                    @click="checkValue()"
+                    size="lg"
                     >Create account</base-button
                   >
                 </div>
@@ -164,8 +171,10 @@
 
 <script>
 import axios from "@/util/http-common";
+import BaseButton from "../components/BaseButton.vue";
 
 export default {
+  components: { BaseButton },
   data() {
     return {
       searchWindow: {
@@ -225,51 +234,21 @@ export default {
       }).open();
     },
     checkValue() {
-      alert("dfdfd");
       // 사용자 입력값 체크하기
       let err = true;
       let msg = "";
-<<<<<<< Updated upstream
       !this.name && ((msg = "이름을 입력해주세요"), (err = false)),
         err && !this.id && ((msg = "아이디를 입력해주세요"), (err = false)),
         err && !this.pw && ((msg = "비밀번호를 입력해주세요"), (err = false)),
-        err && !this.phone && ((msg = "전화번호를 입력해주세요"), (err = false)),
+        err &&
+          !this.phone &&
+          ((msg = "전화번호를 입력해주세요"), (err = false)),
         err && !this.email && ((msg = "E-mail을 입력해주세요"), (err = false)),
         err && !this.postcode && ((msg = "주소를 확인해주세요"), (err = false)),
-        err && !this.extraAddress && ((msg = "주소를 확인해주세요"), (err = false)),
+        err &&
+          !this.extraAddress &&
+          ((msg = "주소를 확인해주세요"), (err = false)),
         err && !this.agree && ((msg = "정책에 동의해주세요"), (err = false));
-=======
-      !this.name &&
-        ((msg = "이름을 입력해주세요"), (err = false), this.$refs.name.focus());
-      err &&
-        !this.id &&
-        ((msg = "아이디를 입력해주세요"), (err = false), this.$refs.id.focus());
-      err &&
-        !this.pw &&
-        ((msg = "비밀번호를 입력해주세요"),
-        (err = false),
-        this.$refs.pw.focus());
-      err &&
-        !this.phone &&
-        ((msg = "전화번호를 입력해주세요"),
-        (err = false),
-        this.$refs.phone.focus());
-      err &&
-        !this.email &&
-        ((msg = "E-mail을 입력해주세요"),
-        (err = false),
-        this.$refs.email.focus());
-      err &&
-        !this.postcode &&
-        ((msg = "주소를 확인해주세요"),
-        (err = false),
-        this.$refs.postcode.focus());
-      err &&
-        !this.extraAddress &&
-        ((msg = "주소를 확인해주세요"),
-        (err = false),
-        this.$refs.extraAddress.focus());
->>>>>>> Stashed changes
 
       if (!err) alert(msg);
       // 만약, 내용이 다 입력되어 있다면 registBoard 호출
@@ -302,3 +281,27 @@ export default {
   },
 };
 </script>
+<style scoped>
+.back {
+  background-image: url("../images_happy/back1.jpg");
+  background-size: cover;
+}
+.vue-typer {
+  color: #ffffff;
+  text-align: center;
+}
+
+.vue-typer .custom.char.typed {
+  color: #ffffff;
+  text-align: center;
+}
+.vue-typer .custom.char.selected {
+  color: #607d8b;
+  background-color: transparent;
+  text-decoration: line-through;
+}
+
+.vue-typer .custom.caret {
+  display: none;
+}
+</style>

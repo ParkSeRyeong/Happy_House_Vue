@@ -1,49 +1,186 @@
 <template>
   <div class="profile-page">
-    <section class="section-profile-cover section-shaped my-0">
-      <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </section>
+    <section class="section-profile-cover section-shaped my-0 back"></section>
     <section class="section section-skew">
-      <div class="container">
-        <card shadow class="card-profile mt--300" no-body>
-          <div class="px-4">
-            <div class="row justify-content-center">
-              <template>
-                <form role="textarea">
-                  ID :
-                  <base-input type="text" v-model="name" readonly> </base-input>
-                  <base-input type="text" v-model="id" readonly> </base-input>
-                  <base-input type="text" v-model="pw"> </base-input>
-                  <base-input type="text" v-model="phone"> </base-input>
-                  <base-input type="text" v-model="email"> </base-input>
-                  <base-input type="text" v-model="postcode"> </base-input>
-                  <input type="button" value="우편번호 찾기" @click="execDaumPostcode" />
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <div class="container pt-lg-md">
+            <card shadow class="card-profile mt--300" no-body>
+              <div class="px-4">
+                <div class="row justify-content-center">
+                  <template>
+                    <form role="textarea">
+                      <div class="row">
+                        <div class="col">
+                          <span><h2>정보 수정</h2></span>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col"><span> </span></div>
+                      </div>
 
-                  <base-input type="text" v-model="address"> </base-input>
-                  <base-input type="text" v-model="extraAddress"> </base-input>
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Name"
+                            addon-left-icon="fa fa-user"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            v-model="name"
+                            readonly
+                            class="input"
+                          >
+                          </base-input>
+                        </div>
+                      </div>
 
-                  <div class="text-center">
-                    <base-button type="primary" class="my-4" @click="checkValue"
-                      >수정 완료!</base-button
-                    >
-                  </div>
-                </form>
-              </template>
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" ID"
+                            addon-left-icon="fa fa-id-card-o"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            v-model="id"
+                            readonly
+                            class="input"
+                          >
+                          </base-input>
+                        </div>
+                      </div>
 
-              <!-- here -->
-            </div>
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" PassWord"
+                            addon-left-icon="ni ni-lock-circle-open"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input type="text" v-model="pw" class="input">
+                          </base-input>
+                        </div>
+                      </div>
 
-            <!-- hrere -->
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Phone"
+                            addon-left-icon="fa fa-phone"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input type="text" v-model="phone" class="input">
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Email"
+                            addon-left-icon="fa fa-envelope"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input type="text" v-model="email" calss="input">
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-3">
+                          <base-input
+                            placeholder=" Post CODE"
+                            addon-left-icon="fa fa-location-arrow"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-5">
+                          <base-input
+                            alternative
+                            class="mb-2 input"
+                            placeholder=" 우편번호"
+                            v-model="postcode"
+                          >
+                          </base-input>
+                        </div>
+                        <div class="col-4">
+                          <base-input
+                            type="button"
+                            value="우편번호 찾기"
+                            @click="execDaumPostcode"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Address"
+                            addon-left-icon="fa fa-map-marker"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            v-model="address"
+                            class="input"
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" extraAddress"
+                            addon-left-icon="fa fa-map-marker"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            v-model="extraAddress"
+                            class="input"
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <base-button
+                          type="default"
+                          class="my-4"
+                          @click="checkValue"
+                          >수정 완료!</base-button
+                        >
+                      </div>
+                    </form>
+                  </template>
+
+                  <!-- here -->
+                </div>
+
+                <!-- hrere -->
+              </div>
+            </card>
           </div>
-        </card>
+        </div>
+        <div class="col-lg-4"></div>
       </div>
     </section>
   </div>
@@ -67,7 +204,10 @@ export default {
   },
   methods: {
     execDaumPostcode() {
-      const currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      const currentScroll = Math.max(
+        document.body.scrollTop,
+        document.documentElement.scrollTop
+      );
       // eslint-disable-next-line
       new daum.Postcode({
         onComplete: (data) => {
@@ -82,7 +222,9 @@ export default {
             }
             if (data.buildingName !== "" && data.apartment === "Y") {
               this.extraAddress +=
-                this.extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+                this.extraAddress !== ""
+                  ? `, ${data.buildingName}`
+                  : data.buildingName;
             }
             if (this.extraAddress !== "") {
               this.extraAddress = ` (${this.extraAddress})`;
@@ -107,10 +249,14 @@ export default {
       let err = true;
       let msg = "";
       !this.pw && ((msg = "비밀번호를 입력해주세요"), (err = false)),
-        err && !this.phone && ((msg = "전화번호를 입력해주세요"), (err = false)),
+        err &&
+          !this.phone &&
+          ((msg = "전화번호를 입력해주세요"), (err = false)),
         err && !this.email && ((msg = "E-mail을 입력해주세요"), (err = false)),
         err && !this.postcode && ((msg = "주소를 확인해주세요"), (err = false)),
-        err && !this.extraAddress && ((msg = "주소를 확인해주세요"), (err = false));
+        err &&
+          !this.extraAddress &&
+          ((msg = "주소를 확인해주세요"), (err = false));
 
       if (!err) alert(msg);
       // 만약, 내용이 다 입력되어 있다면 registBoard 호출
@@ -144,4 +290,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#disabled {
+  background-color: rgb(89, 83, 83);
+}
+
+.back {
+  background-image: url("../images_happy/back1.jpg");
+  background-size: cover;
+}
+
+.input >>> input {
+  text-align: center;
+}
+</style>

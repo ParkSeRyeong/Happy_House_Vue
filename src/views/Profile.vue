@@ -1,51 +1,203 @@
 <template>
   <div class="profile-page">
-    <section class="section-profile-cover section-shaped my-0">
-      <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </section>
+    <section class="section-profile-cover section-shaped my-0 back"></section>
     <section class="section section-skew">
-      <div class="container">
-        <card shadow class="card-profile mt--300" no-body>
-          <div class="px-4">
-            <div class="row justify-content-center">
-              <template>
-                <form role="textarea">
-                  ID :
-                  <base-input type="text" v-model="this.userInfo.name" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.id" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.pw" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.phone" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.email" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.postcode" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.address" readonly> </base-input>
-                  <base-input type="text" v-model="this.userInfo.extraAddress" readonly>
-                  </base-input>
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <div class="container pt-lg-md">
+            <card shadow class="card-profile mt--300" no-body>
+              <div class="px-4">
+                <div class="row justify-content-center">
+                  <template>
+                    <form role="textarea">
+                      <div class="row">
+                        <div class="col">
+                          <span><h2>My Page</h2></span>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col"><span> </span></div>
+                      </div>
 
-                  <div class="text-center">
-                    <base-button type="primary" class="my-4" @click="modifyUser"
-                      >회원 정보 수정</base-button
-                    >
-                    <base-button type="primary" class="my-4" @click="deleteUser"
-                      >회원 탈퇴</base-button
-                    >
-                  </div>
-                </form>
-              </template>
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Name"
+                            addon-left-icon="fa fa-user"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            class="input"
+                            type="text"
+                            v-model="this.userInfo.name"
+                            readonly
+                            style="text-align: center"
+                          >
+                          </base-input>
+                        </div>
+                      </div>
 
-              <!-- here -->
-            </div>
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" ID"
+                            addon-left-icon="fa fa-id-card-o"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            class="input"
+                            type="text"
+                            v-model="this.userInfo.id"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
 
-            <!-- hrere -->
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" PassWord"
+                            addon-left-icon="ni ni-lock-circle-open"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            class="input"
+                            v-model="this.userInfo.pw"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Phone"
+                            addon-left-icon="fa fa-phone"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            class="input"
+                            type="text"
+                            v-model="this.userInfo.phone"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Email"
+                            addon-left-icon="fa fa-envelope"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            class="input"
+                            v-model="this.userInfo.email"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Post CODE"
+                            addon-left-icon="fa fa-location-arrow"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            class="input"
+                            v-model="this.userInfo.postcode"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" Address"
+                            addon-left-icon="fa fa-map-marker"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            class="input"
+                            v-model="this.userInfo.address"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <base-input
+                            placeholder=" extraAddress"
+                            addon-left-icon="fa fa-map-marker"
+                            readonly
+                          ></base-input>
+                        </div>
+                        <div class="col-7">
+                          <base-input
+                            type="text"
+                            class="input"
+                            v-model="this.userInfo.extraAddress"
+                            readonly
+                          >
+                          </base-input>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <base-button
+                          type="default"
+                          class="my-4"
+                          @click="modifyUser"
+                          >회원 정보 수정</base-button
+                        >
+                        <base-button
+                          type="default"
+                          class="my-4"
+                          @click="deleteUser"
+                          >회원 탈퇴</base-button
+                        >
+                      </div>
+                    </form>
+                  </template>
+
+                  <!-- here -->
+                </div>
+
+                <!-- hrere -->
+              </div>
+            </card>
           </div>
-        </card>
+        </div>
+        <div class="col-lg-4"></div>
       </div>
     </section>
   </div>
@@ -54,6 +206,7 @@
 <script>
 import { mapState } from "vuex";
 import axios from "@/util/http-common";
+// import BaseInput from '../components/BaseInput.vue';
 
 export default {
   data() {
@@ -92,4 +245,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.back {
+  background-image: url("../images_happy/back1.jpg");
+  background-size: cover;
+}
+
+.input >>> input {
+  text-align: center;
+}
+</style>

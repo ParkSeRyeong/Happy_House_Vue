@@ -27,13 +27,9 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Home,
-<<<<<<< Updated upstream
-        footer: AppFooter,
-      },
-=======
         footer: AppFooter
       }
->>>>>>> Stashed changes
+
     },
     {
       path: "/login",
@@ -50,10 +46,8 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Register,
-<<<<<<< Updated upstream
         footer: AppFooter,
       },
-      // main
     },
     {
       path: "/profile",
@@ -72,11 +66,7 @@ export default new Router({
         default: Modify,
         footer: AppFooter,
       },
-=======
-        footer: AppFooter
-      }
-      // main
->>>>>>> Stashed changes
+
     },
     {
       path: "/search",

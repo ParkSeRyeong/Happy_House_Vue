@@ -3998,6 +3998,7 @@ fieldset .form-control:focus {
 fieldset[disabled] .form-control {
   opacity: 0.5;
   filter: alpha(opacity=50);
+  background-color: #555555;
 }
 
 /* Forms in all backgrounds */

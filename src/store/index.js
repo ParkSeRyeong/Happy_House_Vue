@@ -229,10 +229,9 @@ export default new Vuex.Store({
     },
 
     logout({ commit }) {
+      alert("로그아웃되었습니다.")
       commit("logout"); // store에 상태 값들을 바꿔준다.
       localStorage.removeItem("access_token"); // 토큰도 지워준다.
-      router.push({ name: "Home" });
-      // main
     },
   },
 });
